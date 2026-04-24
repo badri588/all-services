@@ -77,7 +77,7 @@ const TRANSACTIONS = [
   },
 ];
 
-export default function Earnings({ navigation }) {
+export default function MyWalletScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.safe}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />

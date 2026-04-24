@@ -1,205 +1,205 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   View,
   Text,
   StyleSheet,
-  TouchableOpacity,
-  StatusBar,
-  Platform,
-  Alert,
+  SafeAreaView,
   ScrollView,
-} from 'react-native';
-import { COLORS, SPACING, RADIUS } from '../data/theme';
-import {
-  InputField,
-  PrimaryButton,
-  SecondaryButton,
-  SectionHeader,
-} from '../components/UIComponents';
+  TouchableOpacity,
+  TextInput,
+  StatusBar,
+} from "react-native";
 
-export default function SignIn({ navigation, route }) {
-  const [loginValue, setLoginValue] = useState('');
-  const [password, setPassword] = useState('');
+export default function SignIn({ navigation }) {
+  const [mobile, setMobile] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSignIn = () => {
-    const redirectRouteName = route?.params?.redirectRouteName;
-    const redirectParams = route?.params?.redirectParams || {};
-
-    if (redirectRouteName) {
-      navigation?.navigate?.(redirectRouteName, redirectParams);
+  const openProviderTabs = () => {
+    if (navigation?.reset) {
+      navigation.reset("ProviderTabs");
       return;
     }
 
-    navigation?.navigate?.('ProviderTabs');
+    navigation?.navigate?.("ProviderTabs");
   };
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor={COLORS.bg} />
+    <SafeAreaView style={styles.safe}>
+      <StatusBar barStyle="light-content" backgroundColor="#1a1a2e" />
+      <ScrollView contentContainerStyle={styles.container}>
+        <Text style={styles.logo}>ServeNow</Text>
+        <Text style={styles.tagline}>Welcome back! Sign in to continue</Text>
 
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backBtn}>
-          <Text style={styles.backArrow}>←</Text>
+        <Text style={styles.label}>Mobile number</Text>
+        <View style={styles.phoneInput}>
+          <Text style={styles.flag}>+91</Text>
+          <TextInput
+            style={styles.phoneTextInput}
+            value={mobile}
+            onChangeText={setMobile}
+            keyboardType="phone-pad"
+            placeholder="Enter mobile number"
+            placeholderTextColor="#9CA3AF"
+          />
+        </View>
+        <Text style={styles.label}>Password</Text>
+        <TextInput
+          style={styles.input}
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry
+          placeholder="Enter password"
+          placeholderTextColor="#9CA3AF"
+        />
+
+        <TouchableOpacity>
+          <Text style={styles.forgot}>Forgot password?</Text>
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Sign In</Text>
-        <View style={{ width: 40 }} />
-      </View>
 
-      <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
-        <View style={styles.heroCard}>
-          <Text style={styles.heroEmoji}>🔐</Text>
-          <Text style={styles.heroTitle}>Welcome Back</Text>
-          <Text style={styles.heroSubtitle}>
-            Sign in to continue using your service provider account
+        <TouchableOpacity
+          style={styles.primaryBtn}
+          onPress={openProviderTabs}
+        >
+          <Text style={styles.primaryText}>Sign In</Text>
+        </TouchableOpacity>
+
+        <View style={styles.divider}>
+          <View style={styles.line} />
+          <Text style={styles.or}>or</Text>
+          <View style={styles.line} />
+        </View>
+
+        <TouchableOpacity style={styles.socialBtn}>
+          <Text style={styles.socialText}>Continue with Google</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.socialBtn}>
+          <Text style={styles.socialText}>Sign in with OTP</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigation?.navigate("SignupAllInOne")}>
+          <Text style={styles.bottomText}>
+            Don't have an account? <Text style={styles.link}>Register</Text>
           </Text>
-        </View>
-
-        <View style={styles.formCard}>
-          <SectionHeader
-            title="Account Login"
-            subtitle="Enter your user credentials to sign in"
-          />
-
-          <InputField
-            label="Email or Mobile Number"
-            placeholder="Enter email or 10-digit mobile number"
-            value={loginValue}
-            onChangeText={setLoginValue}
-            keyboardType="default"
-            required
-          />
-
-          <InputField
-            label="Password"
-            placeholder="Enter password"
-            value={password}
-            onChangeText={setPassword}
-            required
-          />
-
-          <TouchableOpacity
-            onPress={() => Alert.alert('Forgot Password', 'Connect your forgot password screen here.')}
-            style={styles.forgotWrap}
-          >
-            <Text style={styles.forgotText}>Forgot Password?</Text>
-          </TouchableOpacity>
-
-          <PrimaryButton
-            title="Sign In"
-            onPress={handleSignIn}
-            style={{ marginTop: 8 }}
-          />
-
-          <SecondaryButton
-            title="Create New Account"
-            onPress={() => navigation?.navigate?.('SignupAllInOne')}
-            style={{ marginTop: 12 }}
-          />
-        </View>
+        </TouchableOpacity>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: COLORS.bg },
-
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingTop: Platform.OS === 'ios' ? 56 : 16,
-    paddingHorizontal: SPACING.lg,
-    paddingBottom: SPACING.sm,
-  },
-  backBtn: { width: 40, height: 40, justifyContent: 'center' },
-  backArrow: { fontSize: 22, color: COLORS.text, fontWeight: '700' },
-  headerTitle: { fontSize: 17, fontWeight: '700', color: COLORS.text },
-
-  content: {
-    padding: SPACING.lg,
-    paddingBottom: 40,
-  },
-
-  heroCard: {
-    backgroundColor: COLORS.primary,
-    borderRadius: RADIUS.xl,
-    padding: SPACING.xl,
-    alignItems: 'center',
-    marginBottom: SPACING.lg,
-  },
-  heroEmoji: { fontSize: 42, marginBottom: 10 },
-  heroTitle: {
-    fontSize: 24,
-    fontWeight: '800',
-    color: COLORS.white,
-    marginBottom: 6,
-  },
-  heroSubtitle: {
-    fontSize: 14,
-    color: 'rgba(255,255,255,0.88)',
-    textAlign: 'center',
-    lineHeight: 20,
-  },
-
-  formCard: {
-    backgroundColor: COLORS.white,
-    borderRadius: RADIUS.xl,
-    borderWidth: 1,
-    borderColor: COLORS.border,
-    padding: SPACING.md,
-  },
-
-  roleLabel: {
-    fontSize: 13,
-    fontWeight: '600',
-    color: COLORS.textSecondary,
-    marginBottom: 8,
-    textTransform: 'uppercase',
-    letterSpacing: 0.5,
-  },
-  roleRow: {
-    flexDirection: 'row',
-    marginBottom: SPACING.md,
-    gap: 10,
-  },
-  roleChip: {
+  safe: {
     flex: 1,
-    paddingVertical: 12,
-    borderRadius: RADIUS.full,
-    borderWidth: 1.5,
-    borderColor: COLORS.border,
-    alignItems: 'center',
-    backgroundColor: COLORS.white,
+    backgroundColor: "#FFFFFF",
   },
-  roleChipActive: {
-    backgroundColor: COLORS.primary,
-    borderColor: COLORS.primary,
+  container: {
+    padding: 22,
+    paddingBottom: 35,
   },
-  roleChipText: {
+  logo: {
+    fontSize: 26,
+    fontWeight: "900",
+    color: "#1a1a2e",
+    textAlign: "center",
+    marginTop: 28,
+  },
+  tagline: {
+    color: "#6B7280",
+    textAlign: "center",
+    marginTop: 6,
+    marginBottom: 28,
     fontSize: 14,
-    fontWeight: '700',
-    color: COLORS.textSecondary,
   },
-  roleChipTextActive: {
-    color: COLORS.white,
-  },
-
-  forgotWrap: {
-    alignSelf: 'flex-end',
-    marginTop: 2,
-    marginBottom: 4,
-  },
-  forgotText: {
-    color: COLORS.primary,
+  label: {
+    color: "#6B7280",
     fontSize: 13,
-    fontWeight: '600',
+    fontWeight: "800",
+    marginBottom: 7,
   },
-
-  errorText: {
-    color: COLORS.error,
-    fontSize: 12,
-    marginTop: -6,
+  phoneInput: {
+    borderWidth: 1,
+    borderColor: "#E5E7EB",
+    borderRadius: 12,
+    paddingHorizontal: 14,
+    paddingVertical: 4,
+    marginBottom: 15,
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#FFFFFF",
+  },
+  flag: {
+    fontSize: 14,
+    marginRight: 8,
+  },
+  phoneTextInput: {
+    flex: 1,
+    paddingVertical: 10,
+    fontSize: 14,
+    color: "#111827",
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: "#E5E7EB",
+    borderRadius: 12,
+    paddingHorizontal: 14,
+    paddingVertical: 12,
+    fontSize: 14,
+    color: "#111827",
     marginBottom: 8,
+    backgroundColor: "#FFFFFF",
+  },
+  forgot: {
+    color: "#4F46E5",
+    fontWeight: "800",
+    textAlign: "right",
+    marginBottom: 18,
+  },
+  primaryBtn: {
+    backgroundColor: "#1a1a2e",
+    borderRadius: 13,
+    paddingVertical: 15,
+    alignItems: "center",
+    marginBottom: 18,
+  },
+  primaryText: {
+    color: "#FFFFFF",
+    fontWeight: "900",
+    fontSize: 15,
+  },
+  divider: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    marginBottom: 14,
+  },
+  line: {
+    flex: 1,
+    height: 1,
+    backgroundColor: "#E5E7EB",
+  },
+  or: {
+    color: "#9CA3AF",
+    fontWeight: "700",
+  },
+  socialBtn: {
+    borderWidth: 1,
+    borderColor: "#E5E7EB",
+    borderRadius: 12,
+    paddingVertical: 13,
+    alignItems: "center",
+    marginBottom: 10,
+  },
+  socialText: {
+    color: "#6B7280",
+    fontWeight: "800",
+  },
+  bottomText: {
+    color: "#6B7280",
+    textAlign: "center",
+    marginTop: 14,
+  },
+  link: {
+    color: "#4F46E5",
+    fontWeight: "900",
   },
 });

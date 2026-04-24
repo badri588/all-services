@@ -3,11 +3,16 @@ import { View, StatusBar, StyleSheet } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import AllServicesScreen from "./screens/AllServicesScreen";
+import BeauticianScreen from "./screens/BeauticianScreen";
+import BirthdayDecorationScreen from "./screens/BirthdayDecorationScreen";
 import BookingScreen from "./screens/BookingScreen";
+import CateringServicesScreen from "./screens/CateringServicesScreen";
 import ForgotPasswordScreen from "./screens/ForgotPasswordScreen";
 import DoctorScreen from "./screens/DoctorScreen";
 import DriverPage from "./screens/DriverPage";
 import ElectricianScreen from "./screens/ElectricianScreen";
+import EventPhotographyScreen from "./screens/EventPhotographyScreen";
+import FitnessYogaTrainerScreen from "./screens/FitnessYogaTrainerScreen";
 import FurnitureAssemblyPage from "./screens/FurnitureAssemblyPage";
 import GuardScreen from "./screens/GuardScreen";
 import HandymanPage from "./screens/HandymanPage";
@@ -31,15 +36,23 @@ import HomeTilingScreen from "./screens/HomeTilingScreen";
 import HomeTutionScreen from "./screens/HomeTutionScreen";
 import HomeWaterTankScreen from "./screens/HomeWaterTankScreen";
 import JobDetailScreen from "./screens/JobDetailScreen";
+import LabTestAtHomeScreen from "./screens/LabTestAtHomeScreen";
 import LoginScreen from "./screens/LoginScreen";
 import MaidScreen from "./screens/MaidScreen";
+import MassageTherapyScreen from "./screens/MassageTherapyScreen";
 import MedicalWorkersListScreen from "./screens/MedicalWorkersListScreen";
+import MyBookingsScreen from "./screens/MyBookingsScreen";
+import MyProfileScreen from "./screens/MyProfileScreen";
+import MyWalletScreen from "./screens/MyWalletScreen";
+import PartyPlannerScreen from "./screens/PartyPlannerScreen";
 import PersonalDetailsScreen from "./screens/PersonalDetailsScreen";
+import PhysiotherapyScreen from "./screens/PhysiotherapyScreen";
 import PlumberPage from "./screens/Plumberpage";
 import PoolCleaningScreen from "./screens/PoolCleaningScreen";
 import RepairsPage from "./screens/RepairsPage";
 import ServiceMemberScreen from "./screens/ServiceMemberScreen";
 import SignupScreen from "./screens/SignupScreen";
+import WifiSetupInstallationScreen from "./screens/WifiSetupInstallationScreen";
 import WorkerListScreen from "./screens/WorkerListScreen";
 import WorkersCategoryListScreen from "./screens/Workerslistscreen";
 import SignIn from "./user/SignIn";
@@ -56,6 +69,9 @@ const ROUTES = {
   Home: HomeScreen,
   PersonalDetails: PersonalDetailsScreen,
   ServiceMembers: ServiceMemberScreen,
+  Beautician: BeauticianScreen,
+  BirthdayDecoration: BirthdayDecorationScreen,
+  CateringServices: CateringServicesScreen,
   HomeACRepair: HomeACRepairScreen,
   HomeCarpenter: HomeCarpenterScreen,
   HomeCarWash: HomeCarWashScreen,
@@ -76,16 +92,26 @@ const ROUTES = {
   Doctor: DoctorScreen,
   Driver: DriverPage,
   Electrician: ElectricianScreen,
+  EventPhotography: EventPhotographyScreen,
+  FitnessYogaTrainer: FitnessYogaTrainerScreen,
   FurnitureAssembly: FurnitureAssemblyPage,
   Handyman: HandymanPage,
+  LabTestAtHome: LabTestAtHomeScreen,
   Maid: MaidScreen,
+  MassageTherapy: MassageTherapyScreen,
   HomeRenovation: HomeRenovationPage,
+  PartyPlanner: PartyPlannerScreen,
   Plumber: PlumberPage,
   PoolCleaning: PoolCleaningScreen,
+  Physiotherapy: PhysiotherapyScreen,
   SecurityGuard: GuardScreen,
   AllServices: AllServicesScreen,
+  WifiSetupInstallation: WifiSetupInstallationScreen,
   WorkersList: WorkerListScreen,
   Booking: BookingScreen,
+  MyBookings: MyBookingsScreen,
+  MyWallet: MyWalletScreen,
+  MyProfile: MyProfileScreen,
   MedicalWorkersList: MedicalWorkersListScreen,
   WorkersCategoryList: WorkersCategoryListScreen,
   JobDetail: JobDetailScreen,

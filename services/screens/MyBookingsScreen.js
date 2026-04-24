@@ -117,7 +117,7 @@ const BOOKINGS = {
   ],
 };
 
-export default function MyJobs({ navigation }) {
+export default function MyBookingsScreen({ navigation }) {
   const [activeTab, setActiveTab] = useState("Upcoming");
   const currentBookings = BOOKINGS[activeTab] || [];
 

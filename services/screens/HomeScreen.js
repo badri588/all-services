@@ -576,7 +576,7 @@ const SERVICES = [
   { id: "electrician", name: "Electrician", emoji: "💡", color: "#ca8a04", bg: "#fef9c3", category: "repairs" },
   { id: "plumber", name: "Plumber", emoji: "🔧", color: "#e62e2e", bg: "#ffcccb", category: "repairs" },
   { id: "acRepair", name: "AC Repair", emoji: "❄️", color: "#0891b2", bg: "#e0f2fe", category: "repairs" },
-  { id: "applianceRepair", name: "Appliance Repair", emoji: "🔌", color: "#7c3aed", bg: "#f3e8ff", category: "repairs" },
+  // { id: "applianceRepair", name: "Appliance Repair", emoji: "🔌", color: "#7c3aed", bg: "#f3e8ff", category: "repairs" },
   { id: "handyman", name: "Handyman", emoji: "🛠️", color: "#f97316", bg: "#ffedd5", category: "repairs" },
   { id: "carpenter", name: "Carpenter", emoji: "🪚", color: "#d97706", bg: "#fff7e6", category: "repairs" },
   { id: "painting", name: "Painting", emoji: "🎨", color: "#9333ea", bg: "#f3e8ff", category: "repairs" },
@@ -608,7 +608,7 @@ const SERVICES = [
   { id: "tutor", name: "Tutor", emoji: "📚", color: "#7c3aed", bg: "#f3e8ff", category: "personalServices" },
 
   { id: "wifiSetup", name: "WiFi Setup", emoji: "📶", color: "#0284c7", bg: "#e0f2fe", category: "techSupport" },
-  { id: "cctvInstallation", name: "CCTV Installation", emoji: "📷", color: "#374151", bg: "#f3f4f6", category: "techSupport" },
+  { id: "cctvInstallation", name: "CCTV Installation",  emoji: "📹", color: "#374151", bg: "#f3f4f6", category: "techSupport" },
   { id: "security", name: "Security Services", emoji: "🔒", color: "#d97706", bg: "#fff7e6", category: "techSupport" },
 
   { id: "birthdayDecor", name: "Birthday Decorations", emoji: "🎂", color: "#d97706", bg: "#fef9c3", category: "events" },
@@ -802,17 +802,26 @@ export default function HomeScreen({ navigation }) {
   const getServiceTarget = (service) => {
     const memberScreenMap = {
       acRepair: "ServiceMembers",
+      beautician: "ServiceMembers",
+      birthdayDecor: "ServiceMembers",
       carpenter: "ServiceMembers",
       carWash: "ServiceMembers",
+      cateringServices: "ServiceMembers",
       deepCleaning: "ServiceMembers",
+      eventPhotography: "ServiceMembers",
+      fitnessTrainer: "ServiceMembers",
       homeChef: "ServiceMembers",
       kitchen: "ServiceMembers",
+      labTestAtHome: "ServiceMembers",
       cleaning: "ServiceMembers",
+      massageTherapy: "ServiceMembers",
       gardening: "ServiceMembers",
       laundry: "ServiceMembers",
       moving: "ServiceMembers",
       painting: "ServiceMembers",
+      partyPlanner: "ServiceMembers",
       pestControl: "ServiceMembers",
+      physiotherapy: "ServiceMembers",
       roofing: "ServiceMembers",
       salonAtHome: "ServiceMembers",
       salon: "ServiceMembers",
@@ -820,21 +829,31 @@ export default function HomeScreen({ navigation }) {
       tiling: "ServiceMembers",
       tutor: "ServiceMembers",
       waterTankCleaning: "ServiceMembers",
+      wifiSetup: "ServiceMembers",
     };
 
     const memberScreenParams = {
       acRepair: { serviceType: "ACRepair", service },
+      beautician: { serviceType: "Beautician", service },
+      birthdayDecor: { serviceType: "BirthdayDecoration", service },
       carpenter: { serviceType: "Carpenter", service },
       carWash: { serviceType: "CarWash", service },
+      cateringServices: { serviceType: "CateringServices", service },
       deepCleaning: { serviceType: "Cleaning", service },
+      eventPhotography: { serviceType: "EventPhotography", service },
+      fitnessTrainer: { serviceType: "FitnessYogaTrainer", service },
       homeChef: { serviceType: "Cook", service },
       kitchen: { serviceType: "Cook", service },
+      labTestAtHome: { serviceType: "LabTestAtHome", service },
       cleaning: { serviceType: "Cleaning", service },
+      massageTherapy: { serviceType: "MassageTherapy", service },
       gardening: { serviceType: "Gardening", service },
       laundry: { serviceType: "Laundry", service },
       moving: { serviceType: "Shifting", service },
       painting: { serviceType: "Painting", service },
+      partyPlanner: { serviceType: "PartyPlanner", service },
       pestControl: { serviceType: "PestControl", service },
+      physiotherapy: { serviceType: "Physiotherapy", service },
       roofing: { serviceType: "Roofing", service },
       salonAtHome: { serviceType: "Salon", service },
       salon: { serviceType: "Salon", service },
@@ -842,6 +861,7 @@ export default function HomeScreen({ navigation }) {
       tiling: { serviceType: "Tiling", service },
       tutor: { serviceType: "Tuition", service },
       waterTankCleaning: { serviceType: "WaterTank", service },
+      wifiSetup: { serviceType: "WifiSetupInstallation", service },
     };
 
     if (service.id === "homeNurse") {
@@ -909,6 +929,21 @@ export default function HomeScreen({ navigation }) {
       redirectRouteName: target.routeName,
       redirectParams: target.params,
     });
+  };
+
+  const handleNavPress = (navId) => {
+    setActiveNav(navId);
+
+    const routeMap = {
+      bookings: "MyBookings",
+      wallet: "MyWallet",
+      profile: "MyProfile",
+    };
+
+    const routeName = routeMap[navId];
+    if (routeName) {
+      navigation.navigate(routeName);
+    }
   };
 
   const renderService = ({ item }) => (
@@ -1063,7 +1098,7 @@ export default function HomeScreen({ navigation }) {
             <TouchableOpacity
               key={item.id}
               style={styles.navItem}
-              onPress={() => setActiveNav(item.id)}
+              onPress={() => handleNavPress(item.id)}
               activeOpacity={0.8}
             >
               <Text style={styles.navIcon}>{item.icon}</Text>

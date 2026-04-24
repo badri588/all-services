@@ -22,7 +22,7 @@ const COLORS = {
   red: "#EF4444",
 };
 
-export default function Profile({ navigation }) {
+export default function MyProfileScreen({ navigation }) {
   const accountItems = [
     {
       icon: "user",
