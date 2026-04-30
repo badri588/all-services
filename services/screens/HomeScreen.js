@@ -565,18 +565,20 @@ const CATEGORIES = [
 ];
 
 const SERVICES = [
+  // HOUSEHOLD
   { id: "deepCleaning", name: "Deep Cleaning", emoji: "🧽", color: "#0f766e", bg: "#e6fffb", category: "household" },
   { id: "homeChef", name: "Home Chef", emoji: "👨‍🍳", color: "#ea580c", bg: "#fff7ed", category: "household" },
   { id: "maid", name: "Maid", emoji: "🧑‍🔧", color: "#1d4ed8", bg: "#dbeafe", category: "household" },
   { id: "laundry", name: "Laundry", emoji: "🧺", color: "#2563eb", bg: "#eaf2ff", category: "household" },
-  // { id: "kitchen", name: "Kitchen Help", emoji: "🍳", color: "#e8620a", bg: "#fff2e6", category: "household" },
   { id: "waterTankCleaning", name: "Water Tank Cleaning", emoji: "💧", color: "#10b981", bg: "#d1fae5", category: "household" },
   { id: "poolCleaning", name: "Pool Cleaning", emoji: "🏊", color: "#22d3ee", bg: "#e0f2fe", category: "household" },
+  { id: "ironingService", name: "Ironing Service", emoji: "👔", color: "#6366f1", bg: "#eef2ff", category: "household" },
+  { id: "sofaCleaning", name: "Sofa / Carpet Cleaning", emoji: "🛋️", color: "#7c3aed", bg: "#f3e8ff", category: "household" },
 
+  // REPAIRS
   { id: "electrician", name: "Electrician", emoji: "💡", color: "#ca8a04", bg: "#fef9c3", category: "repairs" },
   { id: "plumber", name: "Plumber", emoji: "🔧", color: "#e62e2e", bg: "#ffcccb", category: "repairs" },
   { id: "acRepair", name: "AC Repair", emoji: "❄️", color: "#0891b2", bg: "#e0f2fe", category: "repairs" },
-  // { id: "applianceRepair", name: "Appliance Repair", emoji: "🔌", color: "#7c3aed", bg: "#f3e8ff", category: "repairs" },
   { id: "handyman", name: "Handyman", emoji: "🛠️", color: "#f97316", bg: "#ffedd5", category: "repairs" },
   { id: "carpenter", name: "Carpenter", emoji: "🪚", color: "#d97706", bg: "#fff7e6", category: "repairs" },
   { id: "painting", name: "Painting", emoji: "🎨", color: "#9333ea", bg: "#f3e8ff", category: "repairs" },
@@ -584,41 +586,57 @@ const SERVICES = [
   { id: "homeRenovation", name: "Home Renovation", emoji: "🏡", color: "#d97706", bg: "#fff7e6", category: "repairs" },
   { id: "tiling", name: "Tiling", emoji: "🔲", color: "#16a34a", bg: "#e8fbe8", category: "repairs" },
   { id: "roofing", name: "Roofing", emoji: "🏠", color: "#ef4444", bg: "#fef2f2", category: "repairs" },
-  // { id: "plumbingRepair", name: "Plumbing Repair", emoji: "🚰", color: "#e11d48", bg: "#fbe0e0", category: "repairs" },
+  { id: "glassFitting", name: "Glass / Window Fitting", emoji: "🪟", color: "#0ea5e9", bg: "#e0f2fe", category: "repairs" },
+  { id: "waterproofing", name: "Waterproofing", emoji: "🛡️", color: "#0f766e", bg: "#ccfbf1", category: "repairs" },
 
+  // PERSONAL CARE
   { id: "salonAtHome", name: "Salon at Home", emoji: "💇", color: "#db2777", bg: "#fce7f3", category: "personalCare" },
   { id: "beautician", name: "Beautician", emoji: "💅", color: "#be185d", bg: "#fdf2f8", category: "personalCare" },
-  // { id: "haircutService", name: "Haircut Service", emoji: "✂️", color: "#4f46e5", bg: "#eef2ff", category: "personalCare" },
   { id: "massageTherapy", name: "Massage Therapy", emoji: "💆", color: "#0369a1", bg: "#e0f2fe", category: "personalCare" },
+  { id: "mehendi", name: "Mehendi Artist", emoji: "🌿", color: "#b45309", bg: "#fef3c7", category: "personalCare" },
+  { id: "makeupArtist", name: "Makeup Artist", emoji: "💄", color: "#e11d48", bg: "#ffe4e6", category: "personalCare" },
 
+  // HEALTHCARE
   { id: "doctor", name: "Doctor Visit", emoji: "🩺", color: "#0891b2", bg: "#e0f2fe", category: "healthcare" },
   { id: "homeNurse", name: "Home Nurse", emoji: "💊", color: "#16a34a", bg: "#e8fbe8", category: "healthcare" },
   { id: "physiotherapy", name: "Physiotherapy", emoji: "🦯", color: "#059669", bg: "#d1fae5", category: "healthcare" },
   { id: "labTestAtHome", name: "Lab Test at Home", emoji: "🧪", color: "#dc2626", bg: "#fee2e2", category: "healthcare" },
+  { id: "elderCare", name: "Elder Care", emoji: "🧓", color: "#4f46e5", bg: "#eef2ff", category: "healthcare" },
+  { id: "babyCare", name: "Baby Care / Nanny", emoji: "👶", color: "#f59e0b", bg: "#fef9c3", category: "healthcare" },
 
+  // TRANSPORT
   { id: "driver", name: "Driver", emoji: "🚗", color: "#dc2626", bg: "#fee2e2", category: "transport" },
-  // { id: "pickupDrop", name: "Pickup & Drop", emoji: "🚐", color: "#1d4ed8", bg: "#dbeafe", category: "transport" },
   { id: "carWash", name: "Car Wash", emoji: "🚙", color: "#2563eb", bg: "#eaf2ff", category: "transport" },
   { id: "moving", name: "Shifting / Moving", emoji: "📦", color: "#3b82f6", bg: "#e0f2fe", category: "transport" },
 
-  // { id: "petGrooming", name: "Pet Grooming", emoji: "🐾", color: "#92400e", bg: "#fef3c7", category: "petLifestyle" },
-  { id: "petWalking", name: "Pet training", emoji: "🦮", color: "#15803d", bg: "#dcfce7", category: "petLifestyle" },
+  // PET & LIFESTYLE
+  { id: "petWalking", name: "Pet Training", emoji: "🦮", color: "#15803d", bg: "#dcfce7", category: "petLifestyle" },
 
+  // PERSONAL SERVICES
   { id: "fitnessTrainer", name: "Fitness / Yoga", emoji: "🏋️", color: "#b45309", bg: "#fef9c3", category: "personalServices" },
   { id: "tutor", name: "Tutor", emoji: "📚", color: "#7c3aed", bg: "#f3e8ff", category: "personalServices" },
+  { id: "dietitian", name: "Dietitian / Nutritionist", emoji: "🥗", color: "#16a34a", bg: "#dcfce7", category: "personalServices" },
 
+  // TECH SUPPORT
   { id: "wifiSetup", name: "WiFi Setup", emoji: "📶", color: "#0284c7", bg: "#e0f2fe", category: "techSupport" },
-  { id: "cctvInstallation", name: "CCTV Installation",  emoji: "📹", color: "#374151", bg: "#f3f4f6", category: "techSupport" },
+  { id: "cctvInstallation", name: "CCTV Installation", emoji: "📹", color: "#374151", bg: "#f3f4f6", category: "techSupport" },
   { id: "security", name: "Security Services", emoji: "🔒", color: "#d97706", bg: "#fff7e6", category: "techSupport" },
+  { id: "computerRepair", name: "Computer / Laptop Repair", emoji: "💻", color: "#1d4ed8", bg: "#dbeafe", category: "techSupport" },
 
+  // EVENTS
   { id: "birthdayDecor", name: "Birthday Decorations", emoji: "🎂", color: "#d97706", bg: "#fef9c3", category: "events" },
   { id: "eventPhotography", name: "Event Photography", emoji: "📸", color: "#7c3aed", bg: "#f3e8ff", category: "events" },
   { id: "cateringServices", name: "Catering Services", emoji: "🍽️", color: "#b91c1c", bg: "#fee2e2", category: "events" },
   { id: "partyPlanner", name: "Party Planner", emoji: "🎉", color: "#ec4899", bg: "#fce7f3", category: "events" },
+  { id: "tentHouse", name: "Tent House / Mandap", emoji: "🏕️", color: "#92400e", bg: "#fef3c7", category: "events" },
+  { id: "dj", name: "DJ / Sound System", emoji: "🎶", color: "#7c3aed", bg: "#f3e8ff", category: "events" },
 
+  // OUTDOOR
   { id: "gardening", name: "Gardening", emoji: "🌱", color: "#10b981", bg: "#d1fae5", category: "outdoor" },
   { id: "pestControl", name: "Pest Control", emoji: "🦟", color: "#ef4444", bg: "#fef2f2", category: "outdoor" },
   { id: "sewageTreatment", name: "Sewage Treatment", emoji: "🚧", color: "#b45309", bg: "#fff7e6", category: "outdoor" },
+  { id: "borewellService", name: "Borewell Service", emoji: "⛏️", color: "#78716c", bg: "#f5f5f4", category: "outdoor" },
+  { id: "solarInstallation", name: "Solar Panel Installation", emoji: "☀️", color: "#ca8a04", bg: "#fefce8", category: "outdoor" },
 ];
 
 const BANNERS = [
