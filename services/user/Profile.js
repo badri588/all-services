@@ -1,355 +1,120 @@
-import React from "react";
+import React from 'react';
 import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  TouchableOpacity,
-  SafeAreaView,
-  StatusBar,
-  Platform,
-} from "react-native";
-import { Ionicons, Feather } from "@expo/vector-icons";
-import BottomNavBar from "../components/BottomNavBar";
+  View, Text, TouchableOpacity, ScrollView,
+  StyleSheet, SafeAreaView,
+} from 'react-native';
+import { BottomNav } from './HomeScreen';
 
-const COLORS = {
-  bg: "#FFFFFF",
-  green: "#16A05D",
-  purple: "#6C43D8",
-  text: "#111827",
-  muted: "#6B7280",
-  border: "#EEF0F4",
-  red: "#EF4444",
-};
+const GREEN = '#2e7d32';
+const LIGHT_GREEN = '#e8f5e9';
+
+const MENU_ITEMS = [
+  { icon: '👤', label: 'Personal Information', chevron: true },
+  { icon: '📄', label: 'Documents', tag: 'Verified', tagColor: GREEN, chevron: true },
+  { icon: '🛠️', label: 'Services Offered', chevron: true },
+  { icon: '🏦', label: 'Bank Details', chevron: true },
+  { icon: '📅', label: 'Availability', tag: 'Online', tagColor: GREEN, chevron: true },
+  { icon: '🔒', label: 'Change Password', chevron: true },
+];
 
 export default function Profile({ navigation }) {
-  const accountItems = [
-    {
-      icon: "user",
-      title: "Personal Information",
-      route: "PersonalInformation",
-    },
-    {
-      icon: "map-pin",
-      title: "Addresses",
-      route: "Addresses",
-    },
-    {
-      icon: "credit-card",
-      title: "Payment Methods",
-      route: "PaymentMethods",
-    },
-    {
-      icon: "gift",
-      title: "Refer & Earn",
-      route: "ReferEarn",
-    },
-    {
-      icon: "bell",
-      title: "Notification Settings",
-      route: "NotificationSettings",
-    },
-    {
-      icon: "help-circle",
-      title: "Help & Support",
-      route: "HelpSupport",
-    },
-  ];
-
-  const appItems = [
-    {
-      icon: "globe",
-      title: "Language",
-      value: "English",
-      route: "Language",
-    },
-    {
-      icon: "sun",
-      title: "Theme",
-      value: "Light",
-      route: "Theme",
-    },
-  ];
-
-  const handleNavigate = (route) => {
-    if (navigation && route) {
-      navigation.navigate(route);
-    }
-  };
-
-  const handleLogout = () => {
-    if (navigation) {
-      navigation.navigate("Login");
-    }
-  };
-
   return (
     <SafeAreaView style={styles.safe}>
-      <StatusBar barStyle="dark-content" backgroundColor="#fff" />
-
+      {/* Header */}
       <View style={styles.header}>
-        <View style={styles.headerLeft}>
-          <TouchableOpacity
-            style={styles.backBtn}
-            onPress={() => navigation?.goBack?.()}
-            activeOpacity={0.8}
-          >
-            <Ionicons name="arrow-back" size={24} color={COLORS.text} />
-          </TouchableOpacity>
-
-          <Text style={styles.headerTitle}>My Profile</Text>
-        </View>
-
-        <TouchableOpacity style={styles.bellBtn}>
-          <Ionicons name="notifications-outline" size={24} color={COLORS.text} />
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Text style={{ fontSize: 22 }}>←</Text>
+        </TouchableOpacity>
+        <Text style={styles.headerTitle}>My Profile</Text>
+        <TouchableOpacity>
+          <Text style={{ fontSize: 20 }}>✏️</Text>
         </TouchableOpacity>
       </View>
 
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.scrollContent}
-      >
-        <View style={styles.profileHero}>
-          <View style={styles.profileTop}>
-            <View style={styles.profileAvatar}>
-              <Text style={styles.avatarEmoji}>👨🏻‍💼</Text>
-            </View>
-
-            <View style={{ flex: 1 }}>
-              <Text style={styles.profileName}>Rohan Kumar</Text>
-              <Text style={styles.profilePhone}>+91 98765 43210</Text>
-              <Text style={styles.profileEmail}>rohan.kumar@email.com</Text>
-            </View>
-
-            <Feather name="chevron-right" size={23} color={COLORS.text} />
+      <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
+        {/* Profile Info */}
+        <View style={styles.profileCard}>
+          <View style={styles.avatarWrap}>
+            <Text style={{ fontSize: 44 }}>👷</Text>
           </View>
-
-          <TouchableOpacity
-            style={styles.editBtn}
-            onPress={() => handleNavigate("EditProfile")}
-          >
-            <Feather name="edit-2" size={16} color="#fff" />
-            <Text style={styles.editBtnText}>Edit Profile</Text>
-          </TouchableOpacity>
+          <Text style={styles.profileName}>Rajesh Kumar</Text>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 4 }}>
+            <Text style={{ color: '#f59e0b', fontSize: 14 }}>⭐ 4.8</Text>
+          </View>
+          <View style={styles.verifiedBadge}>
+            <Text style={{ fontSize: 12 }}>✅</Text>
+            <Text style={styles.verifiedText}>Verified Worker</Text>
+          </View>
         </View>
 
-        <Text style={styles.sectionTitle}>My Account</Text>
+        {/* Profile Completion */}
+        <View style={styles.completionCard}>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 8 }}>
+            <Text style={styles.completionLabel}>Profile Completion</Text>
+            <Text style={styles.completionPct}>80%</Text>
+          </View>
+          <View style={styles.progressBg}>
+            <View style={[styles.progressFill, { width: '80%' }]} />
+          </View>
+        </View>
 
-        <View style={styles.listCard}>
-          {accountItems.map((item, index) => (
-            <ProfileListItem
-              key={item.title}
-              icon={item.icon}
-              title={item.title}
-              showDivider={index !== accountItems.length - 1}
-              onPress={() => handleNavigate(item.route)}
-            />
+        {/* Menu Items */}
+        <View style={styles.menuCard}>
+          {MENU_ITEMS.map((item, i) => (
+            <TouchableOpacity
+              key={item.label}
+              style={[styles.menuItem, i === MENU_ITEMS.length - 1 && { borderBottomWidth: 0 }]}
+              onPress={() => item.label === 'Availability' && navigation.navigate('ProviderSchedule')}
+            >
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
+                <Text style={{ fontSize: 20 }}>{item.icon}</Text>
+                <Text style={styles.menuLabel}>{item.label}</Text>
+              </View>
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+                {item.tag && (
+                  <Text style={[styles.menuTag, { color: item.tagColor }]}>{item.tag}</Text>
+                )}
+                {item.chevron && <Text style={{ color: '#ccc', fontSize: 18 }}>›</Text>}
+              </View>
+            </TouchableOpacity>
           ))}
         </View>
 
-        <Text style={styles.sectionTitle}>App Settings</Text>
-
-        <View style={styles.listCard}>
-          {appItems.map((item) => (
-            <ProfileListItem
-              key={item.title}
-              icon={item.icon}
-              title={item.title}
-              value={item.value}
-              showDivider={true}
-              onPress={() => handleNavigate(item.route)}
-            />
-          ))}
-
-          <TouchableOpacity style={styles.profileItem} onPress={handleLogout}>
-            <Feather name="log-out" size={22} color={COLORS.red} />
-            <Text style={[styles.profileItemTitle, { color: COLORS.red }]}>
-              Logout
-            </Text>
-          </TouchableOpacity>
-        </View>
-
-        <View style={{ height: 25 }} />
+        {/* Log Out */}
+        <TouchableOpacity style={styles.logoutBtn} onPress={() => navigation.reset('Login')}>
+          <Text style={{ fontSize: 18 }}>🚪</Text>
+          <Text style={styles.logoutText}>Log Out</Text>
+        </TouchableOpacity>
       </ScrollView>
 
-      <BottomNavBar activeId="profile" navigation={navigation} />
+      <BottomNav navigation={navigation} active="Profile" />
     </SafeAreaView>
   );
 }
 
-function ProfileListItem({ icon, title, value, showDivider, onPress }) {
-  return (
-    <>
-      <TouchableOpacity style={styles.profileItem} onPress={onPress}>
-        <Feather name={icon} size={22} color={COLORS.muted} />
-
-        <Text style={styles.profileItemTitle}>{title}</Text>
-
-        {value ? <Text style={styles.profileItemValue}>{value}</Text> : null}
-
-        <Feather name="chevron-right" size={22} color={COLORS.muted} />
-      </TouchableOpacity>
-
-      {showDivider && <View style={styles.divider} />}
-    </>
-  );
-}
-
 const styles = StyleSheet.create({
-  safe: {
-    flex: 1,
-    backgroundColor: "#fff",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight || 0 : 0,
-  },
+  safe: { flex: 1, backgroundColor: '#f5f5f5' },
+  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 14, backgroundColor: '#fff', borderBottomWidth: 1, borderBottomColor: '#eee' },
+  headerTitle: { fontSize: 18, fontWeight: '700', color: '#111' },
+  scroll: { paddingHorizontal: 16, paddingBottom: 24 },
 
-  header: {
-    height: 72,
-    paddingHorizontal: 22,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
+  profileCard: { backgroundColor: '#fff', borderRadius: 16, padding: 24, alignItems: 'center', marginTop: 16, marginBottom: 12, elevation: 2 },
+  avatarWrap: { width: 80, height: 80, borderRadius: 40, backgroundColor: LIGHT_GREEN, alignItems: 'center', justifyContent: 'center', marginBottom: 12 },
+  profileName: { fontSize: 20, fontWeight: '800', color: '#111' },
+  verifiedBadge: { flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: LIGHT_GREEN, borderRadius: 20, paddingHorizontal: 12, paddingVertical: 4, marginTop: 8 },
+  verifiedText: { color: GREEN, fontSize: 12, fontWeight: '600' },
 
-  headerLeft: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
+  completionCard: { backgroundColor: '#fff', borderRadius: 14, padding: 16, marginBottom: 12, elevation: 2 },
+  completionLabel: { fontSize: 14, fontWeight: '600', color: '#111' },
+  completionPct: { fontSize: 14, fontWeight: '700', color: GREEN },
+  progressBg: { height: 8, backgroundColor: '#e0e0e0', borderRadius: 4 },
+  progressFill: { height: 8, backgroundColor: GREEN, borderRadius: 4 },
 
-  backBtn: {
-    width: 38,
-    height: 38,
-    alignItems: "center",
-    justifyContent: "center",
-    marginRight: 8,
-  },
+  menuCard: { backgroundColor: '#fff', borderRadius: 14, marginBottom: 16, elevation: 2, overflow: 'hidden' },
+  menuItem: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 16, paddingHorizontal: 16, borderBottomWidth: 1, borderBottomColor: '#f5f5f5' },
+  menuLabel: { fontSize: 14, color: '#222', fontWeight: '500' },
+  menuTag: { fontSize: 12, fontWeight: '600' },
 
-  headerTitle: {
-    fontSize: 22,
-    fontWeight: "800",
-    color: COLORS.text,
-  },
-
-  bellBtn: {
-    width: 38,
-    height: 38,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
-  scrollContent: {
-    paddingHorizontal: 22,
-    paddingBottom: 105,
-  },
-
-  profileHero: {
-    backgroundColor: "#F4F0FF",
-    borderRadius: 18,
-    padding: 18,
-    marginTop: 4,
-  },
-
-  profileTop: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-
-  profileAvatar: {
-    width: 108,
-    height: 108,
-    borderRadius: 54,
-    backgroundColor: "#D7E4EF",
-    alignItems: "center",
-    justifyContent: "center",
-    marginRight: 18,
-    overflow: "hidden",
-  },
-
-  avatarEmoji: {
-    fontSize: 68,
-  },
-
-  profileName: {
-    fontSize: 18,
-    fontWeight: "900",
-    color: COLORS.text,
-  },
-
-  profilePhone: {
-    fontSize: 13,
-    color: COLORS.text,
-    marginTop: 9,
-  },
-
-  profileEmail: {
-    fontSize: 13,
-    color: COLORS.text,
-    marginTop: 5,
-  },
-
-  editBtn: {
-    marginTop: 18,
-    backgroundColor: COLORS.purple,
-    alignSelf: "flex-end",
-    width: 175,
-    height: 44,
-    borderRadius: 9,
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "row",
-  },
-
-  editBtnText: {
-    color: "#fff",
-    fontSize: 14,
-    fontWeight: "800",
-    marginLeft: 8,
-  },
-
-  sectionTitle: {
-    fontSize: 17,
-    fontWeight: "900",
-    color: COLORS.text,
-    marginTop: 28,
-    marginBottom: 12,
-  },
-
-  listCard: {
-    backgroundColor: "#fff",
-    borderRadius: 14,
-    borderWidth: 1,
-    borderColor: COLORS.border,
-    paddingHorizontal: 16,
-    shadowColor: "#000",
-    shadowOpacity: 0.04,
-    shadowRadius: 8,
-    shadowOffset: { width: 0, height: 3 },
-    elevation: 1,
-  },
-
-  profileItem: {
-    minHeight: 60,
-    flexDirection: "row",
-    alignItems: "center",
-  },
-
-  profileItemTitle: {
-    flex: 1,
-    fontSize: 15,
-    fontWeight: "700",
-    color: COLORS.text,
-    marginLeft: 16,
-  },
-
-  profileItemValue: {
-    fontSize: 14,
-    color: COLORS.muted,
-    fontWeight: "600",
-    marginRight: 10,
-  },
-
-  divider: {
-    height: 1,
-    backgroundColor: COLORS.border,
-    marginLeft: 38,
-  },
+  logoutBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, paddingVertical: 16, backgroundColor: '#fff0f0', borderRadius: 14 },
+  logoutText: { color: '#e53935', fontWeight: '700', fontSize: 15 },
 });

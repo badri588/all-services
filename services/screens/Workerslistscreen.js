@@ -677,7 +677,8 @@ export default function WorkersListScreen({ navigation, route }) {
   const availableCount = workers.filter(w => w.available).length;
 
   const handleWorkerPress = (worker) => {
-    navigation.navigate(category, { workerData: worker });
+    const routeName = category === 'Driver' ? 'DriverNeeded' : category;
+    navigation.navigate(routeName, { workerData: worker });
   };
 
   return (
@@ -716,7 +717,11 @@ export default function WorkersListScreen({ navigation, route }) {
         contentContainerStyle={s.scrollContent}
         showsVerticalScrollIndicator={false}
       >
-        <Text style={s.listHint}>Tap a worker to view their profile & book</Text>
+        <Text style={s.listHint}>
+          {category === 'Driver'
+            ? 'Tap View to open the driver needed page'
+            : 'Tap a worker to view their profile & book'}
+        </Text>
 
         {workers.map(worker => (
           <WorkerCard

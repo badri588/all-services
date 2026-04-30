@@ -58,6 +58,13 @@ import WorkersCategoryListScreen from "./screens/Workerslistscreen";
 import SignIn from "./user/SignIn";
 import SignUp from "./user/SignUp";
 import ProviderTabs from "./user/ProviderTabs";
+import ProviderBookingsScreen from "./user/MyBookingsScreen";
+import ProviderEarningsScreen from "./user/Earnings";
+import ProviderProfileScreen from "./user/Profile";
+import ProviderScheduleScreen from "./user/MyScheduleScreen";
+import ProviderNotificationsScreen from "./user/NotificationsScreen";
+import ProviderBookingDetailsScreen from "./user/BookingDetailsScreen";
+import ProviderLiveTrackingScreen from "./user/LiveTrackingScreen";
 
 const ROUTES = {
   Login: LoginScreen,
@@ -65,6 +72,14 @@ const ROUTES = {
   Signup: SignupScreen,
   SignupAllInOne: SignUp,
   ProviderTabs: ProviderTabs,
+  ProviderHome: ProviderTabs,
+  ProviderBookings: ProviderBookingsScreen,
+  ProviderEarnings: ProviderEarningsScreen,
+  ProviderProfile: ProviderProfileScreen,
+  ProviderSchedule: ProviderScheduleScreen,
+  ProviderNotifications: ProviderNotificationsScreen,
+  ProviderBookingDetails: ProviderBookingDetailsScreen,
+  ProviderLiveTracking: ProviderLiveTrackingScreen,
   ForgotPassword: ForgotPasswordScreen,
   Home: HomeScreen,
   PersonalDetails: PersonalDetailsScreen,
@@ -91,6 +106,7 @@ const ROUTES = {
   HomeNurse: HomeNurseScreen,
   Doctor: DoctorScreen,
   Driver: DriverPage,
+  DriverNeeded: DriverPage,
   Electrician: ElectricianScreen,
   EventPhotography: EventPhotographyScreen,
   FitnessYogaTrainer: FitnessYogaTrainerScreen,

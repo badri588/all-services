@@ -79,7 +79,7 @@ export default function DriverPage({ navigation, route }) {
         >
           <Text style={styles.backArrow}>←</Text>
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Driver Details</Text>
+        <Text style={styles.headerTitle}>Driver Needed</Text>
         <View style={{ width: 32 }} />
       </View>
 
