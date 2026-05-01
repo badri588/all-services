@@ -57,6 +57,8 @@ import WorkerListScreen from "./screens/WorkerListScreen";
 import WorkersCategoryListScreen from "./screens/Workerslistscreen";
 import SignIn from "./user/SignIn";
 import SignUp from "./user/SignUp";
+import SelectServicesScreen from './user/SelectServicesScreen';
+import RegistrationSuccessScreen from './user/RegistrationSuccessScreen';
 import ProviderTabs from "./user/ProviderTabs";
 import ProviderBookingsScreen from "./user/MyBookingsScreen";
 import ProviderEarningsScreen from "./user/Earnings";
@@ -71,6 +73,8 @@ const ROUTES = {
   SignIn: SignIn,
   Signup: SignupScreen,
   SignupAllInOne: SignUp,
+  SelectServices: SelectServicesScreen,
+  RegistrationSuccess: RegistrationSuccessScreen,
   ProviderTabs: ProviderTabs,
   ProviderHome: ProviderTabs,
   ProviderBookings: ProviderBookingsScreen,

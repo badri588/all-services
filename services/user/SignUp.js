@@ -41,12 +41,7 @@ export default function Signup({ navigation }) {
   };
 
   const handleVerifyOtp = () => {
-    if (navigation?.reset) {
-      navigation.reset("SignIn");
-      return;
-    }
-
-    navigation?.navigate?.("SignIn");
+    navigation?.navigate?.("SelectServices");
   };
 
   return (
