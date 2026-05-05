@@ -67,6 +67,7 @@ import ProviderScheduleScreen from "./user/MyScheduleScreen";
 import ProviderNotificationsScreen from "./user/NotificationsScreen";
 import ProviderBookingDetailsScreen from "./user/BookingDetailsScreen";
 import ProviderLiveTrackingScreen from "./user/LiveTrackingScreen";
+import PersonalInformationScreen from "./user/PersonalInformationScreen";
 
 const ROUTES = {
   Login: LoginScreen,
@@ -84,6 +85,7 @@ const ROUTES = {
   ProviderNotifications: ProviderNotificationsScreen,
   ProviderBookingDetails: ProviderBookingDetailsScreen,
   ProviderLiveTracking: ProviderLiveTrackingScreen,
+  PersonalInformation: PersonalInformationScreen,  // ← add this
   ForgotPassword: ForgotPasswordScreen,
   Home: HomeScreen,
   PersonalDetails: PersonalDetailsScreen,
@@ -155,12 +157,18 @@ export default function App() {
       goBack: () => {
         setStack((prev) => (prev.length > 1 ? prev.slice(0, -1) : prev));
       },
-      reset: (routeName, params = {}) => {
-        if (!ROUTES[routeName]) {
+      reset: (config, params = {}) => {
+        // Handle both styles:
+        // Style 1 (React Navigation): navigation.reset({ index: 0, routes: [{ name: 'Login' }] })
+        // Style 2 (simple string):    navigation.reset('Login')
+        if (typeof config === 'object' && config !== null) {
+          const routeName = config?.routes?.[0]?.name;
+          if (!routeName || !ROUTES[routeName]) return;
+          setStack([{ routeName, params: config?.routes?.[0]?.params || {} }]);
           return;
         }
-
-        setStack([{ routeName, params }]);
+        if (!ROUTES[config]) return;
+        setStack([{ routeName: config, params }]);
       },
     }),
     []
