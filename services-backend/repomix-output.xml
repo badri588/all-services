@@ -1,0 +1,4170 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+.gitattributes
+.gitignore
+.mvn/wrapper/maven-wrapper.properties
+mvnw
+mvnw.cmd
+pom.xml
+src/main/java/com/services/in/config/AsyncConfig.java
+src/main/java/com/services/in/config/DataSeeder.java
+src/main/java/com/services/in/config/SecurityConfig.java
+src/main/java/com/services/in/controller/ProviderAuthController.java
+src/main/java/com/services/in/controller/ProviderController.java
+src/main/java/com/services/in/dto/ApiResponse.java
+src/main/java/com/services/in/dto/AuthResponse.java
+src/main/java/com/services/in/dto/ForgotPasswordRequest.java
+src/main/java/com/services/in/dto/ProviderDto.java
+src/main/java/com/services/in/dto/ProviderSignInRequest.java
+src/main/java/com/services/in/dto/ProviderSignUpRequest.java
+src/main/java/com/services/in/dto/SelectSkillsRequest.java
+src/main/java/com/services/in/dto/SendOtpRequest.java
+src/main/java/com/services/in/dto/ServiceCategoryDto.java
+src/main/java/com/services/in/dto/UpdateProfileRequest.java
+src/main/java/com/services/in/dto/VerifyOtpRequest.java
+src/main/java/com/services/in/entity/OtpToken.java
+src/main/java/com/services/in/entity/ServiceCategory.java
+src/main/java/com/services/in/entity/ServiceProvider.java
+src/main/java/com/services/in/exception/AccountStateException.java
+src/main/java/com/services/in/exception/GlobalExceptionHandler.java
+src/main/java/com/services/in/exception/InvalidCredentialsException.java
+src/main/java/com/services/in/exception/InvalidOtpException.java
+src/main/java/com/services/in/exception/ProviderAlreadyExistsException.java
+src/main/java/com/services/in/exception/ProviderNotFoundException.java
+src/main/java/com/services/in/InApplication.java
+src/main/java/com/services/in/repository/OtpTokenRepository.java
+src/main/java/com/services/in/repository/ServiceCategoryRepository.java
+src/main/java/com/services/in/repository/ServiceProviderRepository.java
+src/main/java/com/services/in/security/JwtAuthenticationFilter.java
+src/main/java/com/services/in/security/JwtUtil.java
+src/main/java/com/services/in/security/LabourUserDetailsService.java
+src/main/java/com/services/in/security/ServiceProviderUserDetailsService.java
+src/main/java/com/services/in/service/EmailService.java
+src/main/java/com/services/in/service/FileStorageService.java
+src/main/java/com/services/in/service/OtpService.java
+src/main/java/com/services/in/service/ProviderAuthService.java
+src/main/java/com/services/in/service/ServiceCategoryService.java
+src/main/java/com/services/in/service/SmsService.java
+src/main/resources/application.properties
+src/test/java/com/services/in/InApplicationTests.java
+uploads/documents/provider_10/aadhaar.jpeg
+uploads/documents/provider_10/pan.jpeg
+uploads/documents/provider_11/aadhaar.jpeg
+uploads/documents/provider_11/pan.jpeg
+uploads/documents/provider_12/aadhaar.jpeg
+uploads/documents/provider_12/pan.jpeg
+uploads/documents/provider_13/aadhaar.jpeg
+uploads/documents/provider_13/pan.jpeg
+uploads/documents/provider_14/aadhaar.jpeg
+uploads/documents/provider_14/pan.jpeg
+uploads/documents/provider_15/aadhaar.jpeg
+uploads/documents/provider_15/pan.jpeg
+uploads/documents/provider_16/aadhaar.jpeg
+uploads/documents/provider_16/pan.jpeg
+uploads/documents/provider_17/aadhaar.jpeg
+uploads/documents/provider_17/pan.jpeg
+uploads/documents/provider_18/aadhaar.jpeg
+uploads/documents/provider_18/pan.jpeg
+uploads/documents/provider_19/aadhaar.jpeg
+uploads/documents/provider_19/pan.jpeg
+uploads/documents/provider_20/aadhaar.jpeg
+uploads/documents/provider_20/pan.jpeg
+uploads/documents/provider_9/aadhaar.jpeg
+uploads/documents/provider_9/pan.jpeg
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path=".gitattributes">
+/mvnw text eol=lf
+*.cmd text eol=crlf
+</file>
+
+<file path=".gitignore">
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+</file>
+
+<file path=".mvn/wrapper/maven-wrapper.properties">
+wrapperVersion=3.3.4
+distributionType=only-script
+distributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.14/apache-maven-3.9.14-bin.zip
+</file>
+
+<file path="mvnw">
+#!/bin/sh
+# ----------------------------------------------------------------------------
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+# ----------------------------------------------------------------------------
+
+# ----------------------------------------------------------------------------
+# Apache Maven Wrapper startup batch script, version 3.3.4
+#
+# Optional ENV vars
+# -----------------
+#   JAVA_HOME - location of a JDK home dir, required when download maven via java source
+#   MVNW_REPOURL - repo url base for downloading maven distribution
+#   MVNW_USERNAME/MVNW_PASSWORD - user and password for downloading maven
+#   MVNW_VERBOSE - true: enable verbose log; debug: trace the mvnw script; others: silence the output
+# ----------------------------------------------------------------------------
+
+set -euf
+[ "${MVNW_VERBOSE-}" != debug ] || set -x
+
+# OS specific support.
+native_path() { printf %s\\n "$1"; }
+case "$(uname)" in
+CYGWIN* | MINGW*)
+  [ -z "${JAVA_HOME-}" ] || JAVA_HOME="$(cygpath --unix "$JAVA_HOME")"
+  native_path() { cygpath --path --windows "$1"; }
+  ;;
+esac
+
+# set JAVACMD and JAVACCMD
+set_java_home() {
+  # For Cygwin and MinGW, ensure paths are in Unix format before anything is touched
+  if [ -n "${JAVA_HOME-}" ]; then
+    if [ -x "$JAVA_HOME/jre/sh/java" ]; then
+      # IBM's JDK on AIX uses strange locations for the executables
+      JAVACMD="$JAVA_HOME/jre/sh/java"
+      JAVACCMD="$JAVA_HOME/jre/sh/javac"
+    else
+      JAVACMD="$JAVA_HOME/bin/java"
+      JAVACCMD="$JAVA_HOME/bin/javac"
+
+      if [ ! -x "$JAVACMD" ] || [ ! -x "$JAVACCMD" ]; then
+        echo "The JAVA_HOME environment variable is not defined correctly, so mvnw cannot run." >&2
+        echo "JAVA_HOME is set to \"$JAVA_HOME\", but \"\$JAVA_HOME/bin/java\" or \"\$JAVA_HOME/bin/javac\" does not exist." >&2
+        return 1
+      fi
+    fi
+  else
+    JAVACMD="$(
+      'set' +e
+      'unset' -f command 2>/dev/null
+      'command' -v java
+    )" || :
+    JAVACCMD="$(
+      'set' +e
+      'unset' -f command 2>/dev/null
+      'command' -v javac
+    )" || :
+
+    if [ ! -x "${JAVACMD-}" ] || [ ! -x "${JAVACCMD-}" ]; then
+      echo "The java/javac command does not exist in PATH nor is JAVA_HOME set, so mvnw cannot run." >&2
+      return 1
+    fi
+  fi
+}
+
+# hash string like Java String::hashCode
+hash_string() {
+  str="${1:-}" h=0
+  while [ -n "$str" ]; do
+    char="${str%"${str#?}"}"
+    h=$(((h * 31 + $(LC_CTYPE=C printf %d "'$char")) % 4294967296))
+    str="${str#?}"
+  done
+  printf %x\\n $h
+}
+
+verbose() { :; }
+[ "${MVNW_VERBOSE-}" != true ] || verbose() { printf %s\\n "${1-}"; }
+
+die() {
+  printf %s\\n "$1" >&2
+  exit 1
+}
+
+trim() {
+  # MWRAPPER-139:
+  #   Trims trailing and leading whitespace, carriage returns, tabs, and linefeeds.
+  #   Needed for removing poorly interpreted newline sequences when running in more
+  #   exotic environments such as mingw bash on Windows.
+  printf "%s" "${1}" | tr -d '[:space:]'
+}
+
+scriptDir="$(dirname "$0")"
+scriptName="$(basename "$0")"
+
+# parse distributionUrl and optional distributionSha256Sum, requires .mvn/wrapper/maven-wrapper.properties
+while IFS="=" read -r key value; do
+  case "${key-}" in
+  distributionUrl) distributionUrl=$(trim "${value-}") ;;
+  distributionSha256Sum) distributionSha256Sum=$(trim "${value-}") ;;
+  esac
+done <"$scriptDir/.mvn/wrapper/maven-wrapper.properties"
+[ -n "${distributionUrl-}" ] || die "cannot read distributionUrl property in $scriptDir/.mvn/wrapper/maven-wrapper.properties"
+
+case "${distributionUrl##*/}" in
+maven-mvnd-*bin.*)
+  MVN_CMD=mvnd.sh _MVNW_REPO_PATTERN=/maven/mvnd/
+  case "${PROCESSOR_ARCHITECTURE-}${PROCESSOR_ARCHITEW6432-}:$(uname -a)" in
+  *AMD64:CYGWIN* | *AMD64:MINGW*) distributionPlatform=windows-amd64 ;;
+  :Darwin*x86_64) distributionPlatform=darwin-amd64 ;;
+  :Darwin*arm64) distributionPlatform=darwin-aarch64 ;;
+  :Linux*x86_64*) distributionPlatform=linux-amd64 ;;
+  *)
+    echo "Cannot detect native platform for mvnd on $(uname)-$(uname -m), use pure java version" >&2
+    distributionPlatform=linux-amd64
+    ;;
+  esac
+  distributionUrl="${distributionUrl%-bin.*}-$distributionPlatform.zip"
+  ;;
+maven-mvnd-*) MVN_CMD=mvnd.sh _MVNW_REPO_PATTERN=/maven/mvnd/ ;;
+*) MVN_CMD="mvn${scriptName#mvnw}" _MVNW_REPO_PATTERN=/org/apache/maven/ ;;
+esac
+
+# apply MVNW_REPOURL and calculate MAVEN_HOME
+# maven home pattern: ~/.m2/wrapper/dists/{apache-maven-<version>,maven-mvnd-<version>-<platform>}/<hash>
+[ -z "${MVNW_REPOURL-}" ] || distributionUrl="$MVNW_REPOURL$_MVNW_REPO_PATTERN${distributionUrl#*"$_MVNW_REPO_PATTERN"}"
+distributionUrlName="${distributionUrl##*/}"
+distributionUrlNameMain="${distributionUrlName%.*}"
+distributionUrlNameMain="${distributionUrlNameMain%-bin}"
+MAVEN_USER_HOME="${MAVEN_USER_HOME:-${HOME}/.m2}"
+MAVEN_HOME="${MAVEN_USER_HOME}/wrapper/dists/${distributionUrlNameMain-}/$(hash_string "$distributionUrl")"
+
+exec_maven() {
+  unset MVNW_VERBOSE MVNW_USERNAME MVNW_PASSWORD MVNW_REPOURL || :
+  exec "$MAVEN_HOME/bin/$MVN_CMD" "$@" || die "cannot exec $MAVEN_HOME/bin/$MVN_CMD"
+}
+
+if [ -d "$MAVEN_HOME" ]; then
+  verbose "found existing MAVEN_HOME at $MAVEN_HOME"
+  exec_maven "$@"
+fi
+
+case "${distributionUrl-}" in
+*?-bin.zip | *?maven-mvnd-?*-?*.zip) ;;
+*) die "distributionUrl is not valid, must match *-bin.zip or maven-mvnd-*.zip, but found '${distributionUrl-}'" ;;
+esac
+
+# prepare tmp dir
+if TMP_DOWNLOAD_DIR="$(mktemp -d)" && [ -d "$TMP_DOWNLOAD_DIR" ]; then
+  clean() { rm -rf -- "$TMP_DOWNLOAD_DIR"; }
+  trap clean HUP INT TERM EXIT
+else
+  die "cannot create temp dir"
+fi
+
+mkdir -p -- "${MAVEN_HOME%/*}"
+
+# Download and Install Apache Maven
+verbose "Couldn't find MAVEN_HOME, downloading and installing it ..."
+verbose "Downloading from: $distributionUrl"
+verbose "Downloading to: $TMP_DOWNLOAD_DIR/$distributionUrlName"
+
+# select .zip or .tar.gz
+if ! command -v unzip >/dev/null; then
+  distributionUrl="${distributionUrl%.zip}.tar.gz"
+  distributionUrlName="${distributionUrl##*/}"
+fi
+
+# verbose opt
+__MVNW_QUIET_WGET=--quiet __MVNW_QUIET_CURL=--silent __MVNW_QUIET_UNZIP=-q __MVNW_QUIET_TAR=''
+[ "${MVNW_VERBOSE-}" != true ] || __MVNW_QUIET_WGET='' __MVNW_QUIET_CURL='' __MVNW_QUIET_UNZIP='' __MVNW_QUIET_TAR=v
+
+# normalize http auth
+case "${MVNW_PASSWORD:+has-password}" in
+'') MVNW_USERNAME='' MVNW_PASSWORD='' ;;
+has-password) [ -n "${MVNW_USERNAME-}" ] || MVNW_USERNAME='' MVNW_PASSWORD='' ;;
+esac
+
+if [ -z "${MVNW_USERNAME-}" ] && command -v wget >/dev/null; then
+  verbose "Found wget ... using wget"
+  wget ${__MVNW_QUIET_WGET:+"$__MVNW_QUIET_WGET"} "$distributionUrl" -O "$TMP_DOWNLOAD_DIR/$distributionUrlName" || die "wget: Failed to fetch $distributionUrl"
+elif [ -z "${MVNW_USERNAME-}" ] && command -v curl >/dev/null; then
+  verbose "Found curl ... using curl"
+  curl ${__MVNW_QUIET_CURL:+"$__MVNW_QUIET_CURL"} -f -L -o "$TMP_DOWNLOAD_DIR/$distributionUrlName" "$distributionUrl" || die "curl: Failed to fetch $distributionUrl"
+elif set_java_home; then
+  verbose "Falling back to use Java to download"
+  javaSource="$TMP_DOWNLOAD_DIR/Downloader.java"
+  targetZip="$TMP_DOWNLOAD_DIR/$distributionUrlName"
+  cat >"$javaSource" <<-END
+	public class Downloader extends java.net.Authenticator
+	{
+	  protected java.net.PasswordAuthentication getPasswordAuthentication()
+	  {
+	    return new java.net.PasswordAuthentication( System.getenv( "MVNW_USERNAME" ), System.getenv( "MVNW_PASSWORD" ).toCharArray() );
+	  }
+	  public static void main( String[] args ) throws Exception
+	  {
+	    setDefault( new Downloader() );
+	    java.nio.file.Files.copy( java.net.URI.create( args[0] ).toURL().openStream(), java.nio.file.Paths.get( args[1] ).toAbsolutePath().normalize() );
+	  }
+	}
+	END
+  # For Cygwin/MinGW, switch paths to Windows format before running javac and java
+  verbose " - Compiling Downloader.java ..."
+  "$(native_path "$JAVACCMD")" "$(native_path "$javaSource")" || die "Failed to compile Downloader.java"
+  verbose " - Running Downloader.java ..."
+  "$(native_path "$JAVACMD")" -cp "$(native_path "$TMP_DOWNLOAD_DIR")" Downloader "$distributionUrl" "$(native_path "$targetZip")"
+fi
+
+# If specified, validate the SHA-256 sum of the Maven distribution zip file
+if [ -n "${distributionSha256Sum-}" ]; then
+  distributionSha256Result=false
+  if [ "$MVN_CMD" = mvnd.sh ]; then
+    echo "Checksum validation is not supported for maven-mvnd." >&2
+    echo "Please disable validation by removing 'distributionSha256Sum' from your maven-wrapper.properties." >&2
+    exit 1
+  elif command -v sha256sum >/dev/null; then
+    if echo "$distributionSha256Sum  $TMP_DOWNLOAD_DIR/$distributionUrlName" | sha256sum -c - >/dev/null 2>&1; then
+      distributionSha256Result=true
+    fi
+  elif command -v shasum >/dev/null; then
+    if echo "$distributionSha256Sum  $TMP_DOWNLOAD_DIR/$distributionUrlName" | shasum -a 256 -c >/dev/null 2>&1; then
+      distributionSha256Result=true
+    fi
+  else
+    echo "Checksum validation was requested but neither 'sha256sum' or 'shasum' are available." >&2
+    echo "Please install either command, or disable validation by removing 'distributionSha256Sum' from your maven-wrapper.properties." >&2
+    exit 1
+  fi
+  if [ $distributionSha256Result = false ]; then
+    echo "Error: Failed to validate Maven distribution SHA-256, your Maven distribution might be compromised." >&2
+    echo "If you updated your Maven version, you need to update the specified distributionSha256Sum property." >&2
+    exit 1
+  fi
+fi
+
+# unzip and move
+if command -v unzip >/dev/null; then
+  unzip ${__MVNW_QUIET_UNZIP:+"$__MVNW_QUIET_UNZIP"} "$TMP_DOWNLOAD_DIR/$distributionUrlName" -d "$TMP_DOWNLOAD_DIR" || die "failed to unzip"
+else
+  tar xzf${__MVNW_QUIET_TAR:+"$__MVNW_QUIET_TAR"} "$TMP_DOWNLOAD_DIR/$distributionUrlName" -C "$TMP_DOWNLOAD_DIR" || die "failed to untar"
+fi
+
+# Find the actual extracted directory name (handles snapshots where filename != directory name)
+actualDistributionDir=""
+
+# First try the expected directory name (for regular distributions)
+if [ -d "$TMP_DOWNLOAD_DIR/$distributionUrlNameMain" ]; then
+  if [ -f "$TMP_DOWNLOAD_DIR/$distributionUrlNameMain/bin/$MVN_CMD" ]; then
+    actualDistributionDir="$distributionUrlNameMain"
+  fi
+fi
+
+# If not found, search for any directory with the Maven executable (for snapshots)
+if [ -z "$actualDistributionDir" ]; then
+  # enable globbing to iterate over items
+  set +f
+  for dir in "$TMP_DOWNLOAD_DIR"/*; do
+    if [ -d "$dir" ]; then
+      if [ -f "$dir/bin/$MVN_CMD" ]; then
+        actualDistributionDir="$(basename "$dir")"
+        break
+      fi
+    fi
+  done
+  set -f
+fi
+
+if [ -z "$actualDistributionDir" ]; then
+  verbose "Contents of $TMP_DOWNLOAD_DIR:"
+  verbose "$(ls -la "$TMP_DOWNLOAD_DIR")"
+  die "Could not find Maven distribution directory in extracted archive"
+fi
+
+verbose "Found extracted Maven distribution directory: $actualDistributionDir"
+printf %s\\n "$distributionUrl" >"$TMP_DOWNLOAD_DIR/$actualDistributionDir/mvnw.url"
+mv -- "$TMP_DOWNLOAD_DIR/$actualDistributionDir" "$MAVEN_HOME" || [ -d "$MAVEN_HOME" ] || die "fail to move MAVEN_HOME"
+
+clean || :
+exec_maven "$@"
+</file>
+
+<file path="mvnw.cmd">
+<# : batch portion
+@REM ----------------------------------------------------------------------------
+@REM Licensed to the Apache Software Foundation (ASF) under one
+@REM or more contributor license agreements.  See the NOTICE file
+@REM distributed with this work for additional information
+@REM regarding copyright ownership.  The ASF licenses this file
+@REM to you under the Apache License, Version 2.0 (the
+@REM "License"); you may not use this file except in compliance
+@REM with the License.  You may obtain a copy of the License at
+@REM
+@REM    http://www.apache.org/licenses/LICENSE-2.0
+@REM
+@REM Unless required by applicable law or agreed to in writing,
+@REM software distributed under the License is distributed on an
+@REM "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+@REM KIND, either express or implied.  See the License for the
+@REM specific language governing permissions and limitations
+@REM under the License.
+@REM ----------------------------------------------------------------------------
+
+@REM ----------------------------------------------------------------------------
+@REM Apache Maven Wrapper startup batch script, version 3.3.4
+@REM
+@REM Optional ENV vars
+@REM   MVNW_REPOURL - repo url base for downloading maven distribution
+@REM   MVNW_USERNAME/MVNW_PASSWORD - user and password for downloading maven
+@REM   MVNW_VERBOSE - true: enable verbose log; others: silence the output
+@REM ----------------------------------------------------------------------------
+
+@IF "%__MVNW_ARG0_NAME__%"=="" (SET __MVNW_ARG0_NAME__=%~nx0)
+@SET __MVNW_CMD__=
+@SET __MVNW_ERROR__=
+@SET __MVNW_PSMODULEP_SAVE=%PSModulePath%
+@SET PSModulePath=
+@FOR /F "usebackq tokens=1* delims==" %%A IN (`powershell -noprofile "& {$scriptDir='%~dp0'; $script='%__MVNW_ARG0_NAME__%'; icm -ScriptBlock ([Scriptblock]::Create((Get-Content -Raw '%~f0'))) -NoNewScope}"`) DO @(
+  IF "%%A"=="MVN_CMD" (set __MVNW_CMD__=%%B) ELSE IF "%%B"=="" (echo %%A) ELSE (echo %%A=%%B)
+)
+@SET PSModulePath=%__MVNW_PSMODULEP_SAVE%
+@SET __MVNW_PSMODULEP_SAVE=
+@SET __MVNW_ARG0_NAME__=
+@SET MVNW_USERNAME=
+@SET MVNW_PASSWORD=
+@IF NOT "%__MVNW_CMD__%"=="" ("%__MVNW_CMD__%" %*)
+@echo Cannot start maven from wrapper >&2 && exit /b 1
+@GOTO :EOF
+: end batch / begin powershell #>
+
+$ErrorActionPreference = "Stop"
+if ($env:MVNW_VERBOSE -eq "true") {
+  $VerbosePreference = "Continue"
+}
+
+# calculate distributionUrl, requires .mvn/wrapper/maven-wrapper.properties
+$distributionUrl = (Get-Content -Raw "$scriptDir/.mvn/wrapper/maven-wrapper.properties" | ConvertFrom-StringData).distributionUrl
+if (!$distributionUrl) {
+  Write-Error "cannot read distributionUrl property in $scriptDir/.mvn/wrapper/maven-wrapper.properties"
+}
+
+switch -wildcard -casesensitive ( $($distributionUrl -replace '^.*/','') ) {
+  "maven-mvnd-*" {
+    $USE_MVND = $true
+    $distributionUrl = $distributionUrl -replace '-bin\.[^.]*$',"-windows-amd64.zip"
+    $MVN_CMD = "mvnd.cmd"
+    break
+  }
+  default {
+    $USE_MVND = $false
+    $MVN_CMD = $script -replace '^mvnw','mvn'
+    break
+  }
+}
+
+# apply MVNW_REPOURL and calculate MAVEN_HOME
+# maven home pattern: ~/.m2/wrapper/dists/{apache-maven-<version>,maven-mvnd-<version>-<platform>}/<hash>
+if ($env:MVNW_REPOURL) {
+  $MVNW_REPO_PATTERN = if ($USE_MVND -eq $False) { "/org/apache/maven/" } else { "/maven/mvnd/" }
+  $distributionUrl = "$env:MVNW_REPOURL$MVNW_REPO_PATTERN$($distributionUrl -replace "^.*$MVNW_REPO_PATTERN",'')"
+}
+$distributionUrlName = $distributionUrl -replace '^.*/',''
+$distributionUrlNameMain = $distributionUrlName -replace '\.[^.]*$','' -replace '-bin$',''
+
+$MAVEN_M2_PATH = "$HOME/.m2"
+if ($env:MAVEN_USER_HOME) {
+  $MAVEN_M2_PATH = "$env:MAVEN_USER_HOME"
+}
+
+if (-not (Test-Path -Path $MAVEN_M2_PATH)) {
+    New-Item -Path $MAVEN_M2_PATH -ItemType Directory | Out-Null
+}
+
+$MAVEN_WRAPPER_DISTS = $null
+if ((Get-Item $MAVEN_M2_PATH).Target[0] -eq $null) {
+  $MAVEN_WRAPPER_DISTS = "$MAVEN_M2_PATH/wrapper/dists"
+} else {
+  $MAVEN_WRAPPER_DISTS = (Get-Item $MAVEN_M2_PATH).Target[0] + "/wrapper/dists"
+}
+
+$MAVEN_HOME_PARENT = "$MAVEN_WRAPPER_DISTS/$distributionUrlNameMain"
+$MAVEN_HOME_NAME = ([System.Security.Cryptography.SHA256]::Create().ComputeHash([byte[]][char[]]$distributionUrl) | ForEach-Object {$_.ToString("x2")}) -join ''
+$MAVEN_HOME = "$MAVEN_HOME_PARENT/$MAVEN_HOME_NAME"
+
+if (Test-Path -Path "$MAVEN_HOME" -PathType Container) {
+  Write-Verbose "found existing MAVEN_HOME at $MAVEN_HOME"
+  Write-Output "MVN_CMD=$MAVEN_HOME/bin/$MVN_CMD"
+  exit $?
+}
+
+if (! $distributionUrlNameMain -or ($distributionUrlName -eq $distributionUrlNameMain)) {
+  Write-Error "distributionUrl is not valid, must end with *-bin.zip, but found $distributionUrl"
+}
+
+# prepare tmp dir
+$TMP_DOWNLOAD_DIR_HOLDER = New-TemporaryFile
+$TMP_DOWNLOAD_DIR = New-Item -Itemtype Directory -Path "$TMP_DOWNLOAD_DIR_HOLDER.dir"
+$TMP_DOWNLOAD_DIR_HOLDER.Delete() | Out-Null
+trap {
+  if ($TMP_DOWNLOAD_DIR.Exists) {
+    try { Remove-Item $TMP_DOWNLOAD_DIR -Recurse -Force | Out-Null }
+    catch { Write-Warning "Cannot remove $TMP_DOWNLOAD_DIR" }
+  }
+}
+
+New-Item -Itemtype Directory -Path "$MAVEN_HOME_PARENT" -Force | Out-Null
+
+# Download and Install Apache Maven
+Write-Verbose "Couldn't find MAVEN_HOME, downloading and installing it ..."
+Write-Verbose "Downloading from: $distributionUrl"
+Write-Verbose "Downloading to: $TMP_DOWNLOAD_DIR/$distributionUrlName"
+
+$webclient = New-Object System.Net.WebClient
+if ($env:MVNW_USERNAME -and $env:MVNW_PASSWORD) {
+  $webclient.Credentials = New-Object System.Net.NetworkCredential($env:MVNW_USERNAME, $env:MVNW_PASSWORD)
+}
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+$webclient.DownloadFile($distributionUrl, "$TMP_DOWNLOAD_DIR/$distributionUrlName") | Out-Null
+
+# If specified, validate the SHA-256 sum of the Maven distribution zip file
+$distributionSha256Sum = (Get-Content -Raw "$scriptDir/.mvn/wrapper/maven-wrapper.properties" | ConvertFrom-StringData).distributionSha256Sum
+if ($distributionSha256Sum) {
+  if ($USE_MVND) {
+    Write-Error "Checksum validation is not supported for maven-mvnd. `nPlease disable validation by removing 'distributionSha256Sum' from your maven-wrapper.properties."
+  }
+  Import-Module $PSHOME\Modules\Microsoft.PowerShell.Utility -Function Get-FileHash
+  if ((Get-FileHash "$TMP_DOWNLOAD_DIR/$distributionUrlName" -Algorithm SHA256).Hash.ToLower() -ne $distributionSha256Sum) {
+    Write-Error "Error: Failed to validate Maven distribution SHA-256, your Maven distribution might be compromised. If you updated your Maven version, you need to update the specified distributionSha256Sum property."
+  }
+}
+
+# unzip and move
+Expand-Archive "$TMP_DOWNLOAD_DIR/$distributionUrlName" -DestinationPath "$TMP_DOWNLOAD_DIR" | Out-Null
+
+# Find the actual extracted directory name (handles snapshots where filename != directory name)
+$actualDistributionDir = ""
+
+# First try the expected directory name (for regular distributions)
+$expectedPath = Join-Path "$TMP_DOWNLOAD_DIR" "$distributionUrlNameMain"
+$expectedMvnPath = Join-Path "$expectedPath" "bin/$MVN_CMD"
+if ((Test-Path -Path $expectedPath -PathType Container) -and (Test-Path -Path $expectedMvnPath -PathType Leaf)) {
+  $actualDistributionDir = $distributionUrlNameMain
+}
+
+# If not found, search for any directory with the Maven executable (for snapshots)
+if (!$actualDistributionDir) {
+  Get-ChildItem -Path "$TMP_DOWNLOAD_DIR" -Directory | ForEach-Object {
+    $testPath = Join-Path $_.FullName "bin/$MVN_CMD"
+    if (Test-Path -Path $testPath -PathType Leaf) {
+      $actualDistributionDir = $_.Name
+    }
+  }
+}
+
+if (!$actualDistributionDir) {
+  Write-Error "Could not find Maven distribution directory in extracted archive"
+}
+
+Write-Verbose "Found extracted Maven distribution directory: $actualDistributionDir"
+Rename-Item -Path "$TMP_DOWNLOAD_DIR/$actualDistributionDir" -NewName $MAVEN_HOME_NAME | Out-Null
+try {
+  Move-Item -Path "$TMP_DOWNLOAD_DIR/$MAVEN_HOME_NAME" -Destination $MAVEN_HOME_PARENT | Out-Null
+} catch {
+  if (! (Test-Path -Path "$MAVEN_HOME" -PathType Container)) {
+    Write-Error "fail to move MAVEN_HOME"
+  }
+} finally {
+  try { Remove-Item $TMP_DOWNLOAD_DIR -Recurse -Force | Out-Null }
+  catch { Write-Warning "Cannot remove $TMP_DOWNLOAD_DIR" }
+}
+
+Write-Output "MVN_CMD=$MAVEN_HOME/bin/$MVN_CMD"
+</file>
+
+<file path="pom.xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.5.14</version>
+		<relativePath />
+	</parent>
+	<groupId>com.services</groupId>
+	<artifactId>in</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>labour-auth-backend</name>
+	<description>Backend for Labour/Service Providers</description>
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+	<dependencies>
+		<!-- Spring Boot Web -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- Spring Boot Security -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<!-- Spring Boot Data JPA -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<!-- Spring Boot Mail -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+
+		<!-- Spring Boot Validation -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
+		<!-- MySQL Driver -->
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- H2 for local dev/testing -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- JJWT API -->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-api</artifactId>
+			<version>0.11.5</version>
+		</dependency>
+
+		<!-- JJWT Implementation (runtime) -->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-impl</artifactId>
+			<version>0.11.5</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- JJWT Jackson for JSON serialization (runtime) -->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-jackson</artifactId>
+			<version>0.11.5</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- Lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<!-- Twilio SDK -->
+		<dependency>
+			<groupId>com.twilio.sdk</groupId>
+			<artifactId>twilio</artifactId>
+			<version>10.1.0</version>
+		</dependency>
+
+		<!-- Spring Boot Test -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>default-compile</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+						<configuration>
+							<annotationProcessorPaths>
+								<path>
+									<groupId>org.projectlombok</groupId>
+									<artifactId>lombok</artifactId>
+								</path>
+							</annotationProcessorPaths>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
+</file>
+
+<file path="src/main/java/com/services/in/config/AsyncConfig.java">
+package com.services.in.config;
+
+import org.springframework.context.annotation.Configuration;
+
+import org.springframework.scheduling.annotation.EnableAsync;
+
+/**
+ * Enables Spring's @Async support so EmailService.sendOtpEmail and
+ * sendWelcomeEmail run on a separate thread pool and don't block the HTTP response.
+ */
+@Configuration
+@EnableAsync
+public class AsyncConfig {
+    // Spring Boot auto-configures a SimpleAsyncTaskExecutor by default.
+    // For production, configure a ThreadPoolTaskExecutor bean here.
+}
+</file>
+
+<file path="src/main/java/com/services/in/config/DataSeeder.java">
+// package com.services.in.config;
+// import com.services.in.entity.ServiceCategory;
+// import com.services.in.repository.ServiceCategoryRepository;
+// import org.springframework.boot.CommandLineRunner;
+// import org.springframework.stereotype.Component;
+// import java.util.List;
+// /**
+//  * Seeds the service_categories table with the 10 categories defined in
+//  * user/SelectServicesScreen.js. Runs once at startup; skips seeding if
+//  * data is already present (idempotent).
+//  *
+//  * Matching frontend SERVICES array:
+//  *   { id: 1, icon: '🏠', title: 'Household', desc: 'Cleaning, Cooking, Maid, etc.' }
+//  *   ...
+//  */
+// @Component
+// public class DataSeeder implements CommandLineRunner {
+//     private final ServiceCategoryRepository categoryRepository;
+//     public DataSeeder(ServiceCategoryRepository categoryRepository) {
+//         this.categoryRepository = categoryRepository;
+//     }
+//     @Override
+//     public void run(String... args) {
+//         if (categoryRepository.count() > 0) {
+//             // Already seeded — nothing to do
+//             return;
+//         }
+//         List<ServiceCategory> categories = List.of(
+//                 build("🏠", "Household", "Cleaning, Cooking, Maid, etc.", 1),
+//                 build("🔧", "Repairs", "Plumbing, Carpentry, Painting, etc.", 2),
+//                 build("💇", "Personal Care", "Salon, Massage, Grooming, etc.", 3),
+//                 build("🏥", "Healthcare", "Nursing, Physiotherapy, Elder Care, etc.", 4),
+//                 build("🚗", "Transport", "Driver, Delivery, Courier, etc.", 5),
+//                 build("🐾", "Pet & Lifestyle", "Pet Care, Training, Walking, etc.", 6),
+//                 build("💻", "Tech & Support", "AC Repair, Computer, Mobile Repair, etc.", 7),
+//                 build("🎉", "Events", "Catering, Decor, Photography, etc.", 8),
+//                 build("🌿", "Outdoor & Safety", "Pest Control, Home Security, Gardening, etc.", 9),
+//                 build("🏊", "Pool Cleaning", "Swimming Pool Cleaning & Maintenance", 10)
+//         );
+//         categoryRepository.saveAll(categories);
+//     }
+//     private ServiceCategory build(String icon, String title, String desc, int order) {
+//         return ServiceCategory.builder()
+//                 .icon(icon)
+//                 .title(title)
+//                 .description(desc)
+//                 .sortOrder(order)
+//                 .active(true)
+//                 .build();
+//     }
+// }
+package com.services.in.config;
+
+import java.util.List;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import com.services.in.entity.ServiceCategory;
+import com.services.in.repository.ServiceCategoryRepository;
+
+/**
+ * Seeds the service_categories table with the 10 categories and their
+ * sub-skills. Runs once at startup; skips seeding if data is already present
+ * (idempotent).
+ *
+ * Sub-skills are stored in service_category_sub_skills join table and returned
+ * via GET /api/provider/categories so the frontend can show a grouped picker
+ * (Category → Sub-skills).
+ */
+@Component
+public class DataSeeder implements CommandLineRunner {
+
+    private final ServiceCategoryRepository categoryRepository;
+
+    public DataSeeder(ServiceCategoryRepository categoryRepository) {
+        this.categoryRepository = categoryRepository;
+    }
+
+    @Override
+    public void run(String... args) {
+        if (categoryRepository.count() > 0) {
+            // Already seeded — nothing to do
+            return;
+        }
+
+        List<ServiceCategory> categories = List.of(
+                build("🏠", "Household", "Cleaning, Cooking, Maid, etc.", 1, List.of(
+                        "Home Cleaning",
+                        "Deep Cleaning",
+                        "Cooking",
+                        "Maid Service",
+                        "Laundry & Ironing",
+                        "Baby Sitting",
+                        "Nanny Service",
+                        "Dish Washing",
+                        "Grocery Shopping"
+                )),
+                build("🔧", "Repairs", "Plumbing, Carpentry, Painting, etc.", 2, List.of(
+                        "Plumbing",
+                        "Carpentry",
+                        "Home Painting",
+                        "Wall Plastering",
+                        "Door & Window Repair",
+                        "Roof Repair",
+                        "Flooring & Tiling",
+                        "Waterproofing",
+                        "Welding & Fabrication"
+                )),
+                build("💇", "Personal Care", "Salon, Massage, Grooming, etc.", 3, List.of(
+                        "Haircut & Styling",
+                        "Facial & Skin Care",
+                        "Manicure & Pedicure",
+                        "Waxing & Threading",
+                        "Massage Therapy",
+                        "Bridal Makeup",
+                        "Men's Grooming",
+                        "Hair Coloring",
+                        "Spa Services"
+                )),
+                build("🏥", "Healthcare", "Nursing, Physiotherapy, Elder Care, etc.", 4, List.of(
+                        "Home Nursing",
+                        "Physiotherapy",
+                        "Elder Care",
+                        "Post-Surgery Care",
+                        "Medical Equipment Setup",
+                        "Medication Management",
+                        "Lab Test at Home",
+                        "Wound Dressing",
+                        "Caretaker Services"
+                )),
+                build("🚗", "Transport", "Driver, Delivery, Courier, etc.", 5, List.of(
+                        "Personal Driver",
+                        "Outstation Driver",
+                        "Local Delivery",
+                        "Courier Services",
+                        "School Cab Driver",
+                        "Office Cab Driver",
+                        "Goods Transport",
+                        "Bike Delivery",
+                        "Airport Transfer"
+                )),
+                build("🐾", "Pet & Lifestyle", "Pet Care, Training, Walking, etc.", 6, List.of(
+                        "Dog Walking",
+                        "Pet Grooming",
+                        "Pet Training",
+                        "Pet Boarding",
+                        "Pet Sitting",
+                        "Veterinary Home Visit",
+                        "Aquarium Maintenance",
+                        "Bird Care",
+                        "Pet Transportation"
+                )),
+                build("💻", "Tech & Support", "AC Repair, Computer, Mobile Repair, etc.", 7, List.of(
+                        "AC Repair & Service",
+                        "Refrigerator Repair",
+                        "Washing Machine Repair",
+                        "TV & Electronics Repair",
+                        "Computer / Laptop Repair",
+                        "Mobile Phone Repair",
+                        "Wi-Fi & Networking Setup",
+                        "CCTV Installation",
+                        "Home Automation"
+                )),
+                build("🎉", "Events", "Catering, Decor, Photography, etc.", 8, List.of(
+                        "Event Catering",
+                        "Birthday Decoration",
+                        "Wedding Decoration",
+                        "Event Photography",
+                        "Videography",
+                        "DJ & Sound System",
+                        "Tent & Furniture Rental",
+                        "Event Planning",
+                        "Invitation Design"
+                )),
+                build("🌿", "Outdoor & Safety", "Pest Control, Home Security, Gardening, etc.", 9, List.of(
+                        "Pest Control",
+                        "Gardening & Landscaping",
+                        "Home Security Setup",
+                        "Fire Safety Inspection",
+                        "Gutter Cleaning",
+                        "Water Tank Cleaning",
+                        "Septic Tank Cleaning",
+                        "Chimney Cleaning",
+                        "Solar Panel Cleaning"
+                )),
+                build("🏊", "Pool Cleaning", "Swimming Pool Cleaning & Maintenance", 10, List.of(
+                        "Pool Regular Cleaning",
+                        "Pool Deep Cleaning",
+                        "Pool Chemical Balancing",
+                        "Pool Filter Service",
+                        "Pool Pump Repair",
+                        "Pool Tile Cleaning",
+                        "Pool Water Testing",
+                        "Pool Leak Detection",
+                        "Pool Equipment Installation"
+                ))
+        );
+
+        categoryRepository.saveAll(categories);
+    }
+
+    private ServiceCategory build(
+            String icon, String title, String desc,
+            int order, List<String> subSkills) {
+        return ServiceCategory.builder()
+                .icon(icon)
+                .title(title)
+                .description(desc)
+                .sortOrder(order)
+                .active(true)
+                .subSkills(subSkills)
+                .build();
+    }
+}
+</file>
+
+<file path="src/main/java/com/services/in/config/SecurityConfig.java">
+package com.services.in.config;
+
+import com.services.in.security.JwtAuthenticationFilter;
+import com.services.in.security.LabourUserDetailsService;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import java.util.List;
+
+/**
+ * Spring Security configuration for the labour auth module.
+ *
+ * Public endpoints (no JWT required): POST /api/provider/auth/signup POST
+ * /api/provider/auth/send-otp POST /api/provider/auth/verify-otp POST
+ * /api/provider/auth/signin GET /api/provider/categories (needed before login
+ * for skill selection) GET /h2-console/** (dev only)
+ *
+ * All other /api/provider/** endpoints require a valid JWT with role PROVIDER.
+ */
+@Configuration
+@EnableWebSecurity
+@EnableMethodSecurity
+public class SecurityConfig {
+
+    private final JwtAuthenticationFilter jwtAuthFilter;
+    private final LabourUserDetailsService userDetailsService;
+
+    public SecurityConfig(JwtAuthenticationFilter jwtAuthFilter,
+            LabourUserDetailsService userDetailsService) {
+        this.jwtAuthFilter = jwtAuthFilter;
+        this.userDetailsService = userDetailsService;
+    }
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+                // Stateless REST API — no CSRF needed
+                .csrf(AbstractHttpConfigurer::disable)
+                // CORS configured below
+                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+                // Session management — stateless (JWT)
+                .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                // Route-level authorization
+                .authorizeHttpRequests(auth -> auth
+                // ── Public auth endpoints ──────────────────────────
+                .requestMatchers(HttpMethod.POST,
+                        "/api/provider/auth/signup",
+                        "/api/provider/auth/send-otp",
+                        "/api/provider/auth/verify-otp",
+                        "/api/provider/auth/select-skills",
+                        "/api/provider/auth/signin",
+                        "/api/provider/auth/check-mobile",
+                        "/api/provider/auth/reset-password"
+                ).permitAll()
+                // ── Service categories — needed during registration ─
+                .requestMatchers(HttpMethod.GET, "/api/provider/categories").permitAll()
+                // ── H2 console (dev only) ──────────────────────────
+                .requestMatchers("/h2-console/**").permitAll()
+                // ── Everything else requires authentication ─────────
+                .anyRequest().authenticated()
+                )
+                // Allow H2 console frames in dev
+                .headers(headers -> headers.frameOptions(fo -> fo.sameOrigin()))
+                // Wire our JWT filter before Spring's username/password filter
+                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
+                .authenticationProvider(authenticationProvider());
+
+        return http.build();
+    }
+
+    @Bean
+    public DaoAuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+        provider.setUserDetailsService(userDetailsService);
+        provider.setPasswordEncoder(passwordEncoder());
+        return provider;
+    }
+
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config)
+            throws Exception {
+        return config.getAuthenticationManager();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder(12);
+    }
+
+    /**
+     * CORS — allows the React Native / Expo dev server and production origins.
+     * Extend the allowed origins list as needed.
+     */
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration config = new CorsConfiguration();
+        config.setAllowedOriginPatterns(List.of("*")); // restrict in production
+        config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
+        config.setAllowedHeaders(List.of("*"));
+        config.setAllowCredentials(true);
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", config);
+        return source;
+    }
+}
+</file>
+
+<file path="src/main/java/com/services/in/controller/ProviderAuthController.java">
+package com.services.in.controller;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.services.in.dto.ApiResponse;
+import com.services.in.dto.AuthResponse;
+import com.services.in.dto.ProviderSignInRequest;
+import com.services.in.dto.ProviderSignUpRequest;
+import com.services.in.dto.SelectSkillsRequest;
+import com.services.in.dto.SendOtpRequest;
+import com.services.in.dto.VerifyOtpRequest;
+import com.services.in.service.ProviderAuthService;
+import com.services.in.dto.ForgotPasswordRequest;
+
+import jakarta.validation.Valid;
+
+/**
+ * REST controller for all provider authentication endpoints.
+ *
+ * Base URL: /api/provider/auth
+ *
+ * ┌──────────────────────────────────────────────────────────────────────────┐
+ * │ PROVIDER SIGNUP FLOW │ │ │ │ 1. POST /signup → registers account, triggers
+ * OTP email │ │ 2. POST /verify-otp → verifies 6-digit OTP from email │ │ 3.
+ * POST /select-skills → saves skill categories, activates account │ │ returns
+ * JWT immediately so provider is logged in │ │ │ │ PROVIDER SIGN IN FLOW │ │ │
+ * │ POST /signin → mobile + password → JWT │ │ │ │ OTP HELPERS │ │ │ │ POST
+ * /send-otp → resend / send OTP (signup or forgot-pw) │
+ * └──────────────────────────────────────────────────────────────────────────┘
+ *
+ * All responses use the ApiResponse<T> envelope for consistency.
+ */
+@RestController
+@RequestMapping("/api/provider/auth")
+public class ProviderAuthController {
+
+    private final ProviderAuthService authService;
+
+    public ProviderAuthController(ProviderAuthService authService) {
+        this.authService = authService;
+    }
+
+    // ── 1. Signup ─────────────────────────────────────────────
+    /**
+     * POST /api/provider/auth/signup
+     *
+     * Creates a new provider account and sends an OTP to the provided email.
+     *
+     * Request body: ProviderSignUpRequest { fullName, mobile, email, password,
+     * area, experienceYears? }
+     *
+     * Response: 201 Created { success: true, message: "...", data: null }
+     */
+    @PostMapping(value = "/signup", consumes = org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<ApiResponse<Void>> signUp(
+            @Valid @ModelAttribute ProviderSignUpRequest request) {
+
+        authService.signUp(request);
+
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(ApiResponse.ok(
+                        "Registration started. A 6-digit OTP has been sent to "
+                        + request.getEmail() + ". Please verify to continue."));
+    }
+
+    // ── 2. Send / Resend OTP ──────────────────────────────────
+    /**
+     * POST /api/provider/auth/send-otp
+     *
+     * Sends (or resends) an OTP to the given email. A new OTP automatically
+     * invalidates the previous one.
+     *
+     * Request body: SendOtpRequest { email, purpose? } purpose defaults to
+     * "SIGNUP"
+     *
+     * Response: 200 OK { success: true, message: "OTP sent successfully." }
+     */
+    @PostMapping("/send-otp")
+    public ResponseEntity<ApiResponse<Void>> sendOtp(
+            @Valid @RequestBody SendOtpRequest request) {
+
+        authService.sendOtp(request.getMobile(), request.getPurpose());
+
+        return ResponseEntity.ok(ApiResponse.ok("OTP sent successfully to " + request.getMobile()));
+    }
+
+    // ── 3. Verify OTP ─────────────────────────────────────────
+    /**
+     * POST /api/provider/auth/verify-otp
+     *
+     * Verifies the 6-digit OTP the provider entered. On success, account status
+     * advances from PENDING_OTP → PENDING_SKILLS.
+     *
+     * Request body: VerifyOtpRequest { email, otp, purpose? }
+     *
+     * Response: 200 OK { success: true, message: "Email verified. Please select
+     * your skills." }
+     */
+    @PostMapping("/verify-otp")
+    public ResponseEntity<ApiResponse<Void>> verifyOtp(
+            @Valid @RequestBody VerifyOtpRequest request) {
+
+        authService.verifyOtp(request);
+
+        return ResponseEntity.ok(ApiResponse.ok(
+                "Email verified successfully. Please select the services you offer."));
+    }
+
+    // ── 4. Select Skills ──────────────────────────────────────
+    /**
+     * POST /api/provider/auth/select-skills
+     *
+     * Saves the provider's chosen service categories and activates the account.
+     * Returns a JWT so the frontend can navigate directly to the provider
+     * dashboard.
+     *
+     * Request body: SelectSkillsRequest { email, skills: ["Household",
+     * "Repairs", ...] }
+     *
+     * Response: 200 OK { success: true, message: "Registration complete!",
+     * data: { token, role, provider: { ... } } }
+     */
+    @PostMapping("/select-skills")
+    public ResponseEntity<ApiResponse<AuthResponse>> selectSkills(
+            @Valid @RequestBody SelectSkillsRequest request) {
+
+        AuthResponse authResponse = authService.selectSkills(request);
+
+        return ResponseEntity.ok(ApiResponse.ok(
+                "Registration complete! Welcome to ServeNow.", authResponse));
+    }
+
+    // ── Sign In ───────────────────────────────────────────────
+    /**
+     * POST /api/provider/auth/signin
+     *
+     * Authenticates a provider with mobile + password. Matches user/SignIn.js
+     * fields.
+     *
+     * Request body: ProviderSignInRequest { mobile, password }
+     *
+     * Response: 200 OK { success: true, message: "Signed in successfully.",
+     * data: { token, role, provider: { ... } } }
+     */
+    @PostMapping("/signin")
+    public ResponseEntity<ApiResponse<AuthResponse>> signIn(
+            @Valid @RequestBody ProviderSignInRequest request) {
+
+        AuthResponse authResponse = authService.signIn(request);
+
+        return ResponseEntity.ok(ApiResponse.ok("Signed in successfully.", authResponse));
+    }
+
+    // ── Check mobile exists (forgot password step 1) ──────────
+    /**
+     * POST /api/provider/auth/check-mobile Checks if the mobile number is
+     * registered. If yes, sends OTP. Request body: SendOtpRequest { mobile,
+     * purpose: "FORGOT_PASSWORD" }
+     */
+    @PostMapping("/check-mobile")
+    public ResponseEntity<ApiResponse<Void>> checkMobile(
+            @Valid @RequestBody SendOtpRequest request) {
+
+        authService.checkMobileAndSendOtp(request.getMobile());
+
+        return ResponseEntity.ok(ApiResponse.ok(
+                "Mobile number verified. OTP sent to +91" + request.getMobile()));
+    }
+
+    // ── Reset password (forgot password step 2) ───────────────
+    /**
+     * POST /api/provider/auth/reset-password Verifies OTP and resets the
+     * password. Request body: ForgotPasswordRequest { mobile, otp, newPassword
+     * }
+     */
+    @PostMapping("/reset-password")
+    public ResponseEntity<ApiResponse<Void>> resetPassword(
+            @Valid @RequestBody ForgotPasswordRequest request) {
+
+        authService.resetPassword(request);
+
+        return ResponseEntity.ok(ApiResponse.ok(
+                "Password reset successfully. You can now sign in."));
+    }
+}
+</file>
+
+<file path="src/main/java/com/services/in/controller/ProviderController.java">
+package com.services.in.controller;
+
+import com.services.in.dto.ApiResponse;
+import com.services.in.dto.ProviderDto;
+import com.services.in.dto.ServiceCategoryDto;
+import com.services.in.dto.UpdateProfileRequest;
+import com.services.in.service.ProviderAuthService;
+import com.services.in.service.ServiceCategoryService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+/**
+ * REST controller for authenticated provider endpoints.
+ *
+ * Base URL: /api/provider
+ *
+ * All endpoints here require a valid JWT with role PROVIDER, except GET
+ * /categories which is public (needed during registration).
+ *
+ * Matches Developer 3 responsibilities from the API plan: GET
+ * /providers/{providerId} GET /api/provider/me (convenience — returns own
+ * profile from JWT) GET /api/provider/categories (public — service categories
+ * for skill selection)
+ */
+@RestController
+@RequestMapping("/api/provider")
+public class ProviderController {
+
+    private final ProviderAuthService authService;
+    private final ServiceCategoryService categoryService;
+
+    public ProviderController(ProviderAuthService authService,
+            ServiceCategoryService categoryService) {
+        this.authService = authService;
+        this.categoryService = categoryService;
+    }
+
+    // ── Service categories (public) ────────────────────────────
+    /**
+     * GET /api/provider/categories
+     *
+     * Returns the list of service categories shown on SelectServicesScreen.js.
+     * This endpoint is publicly accessible so it can be called before the
+     * provider has a JWT (i.e. during registration step 3).
+     *
+     * Response: 200 OK { success: true, data: [ { id, icon, title, description
+     * }, ... ] }
+     */
+    @GetMapping("/categories")
+    public ResponseEntity<ApiResponse<List<ServiceCategoryDto>>> getCategories() {
+        List<ServiceCategoryDto> categories = categoryService.getAllActive();
+        return ResponseEntity.ok(ApiResponse.ok("Categories fetched successfully.", categories));
+    }
+
+    // ── Provider profile (authenticated) ──────────────────────
+    /**
+     * GET /api/provider/me
+     *
+     * Returns the authenticated provider's own profile. Extracted from the JWT
+     * subject (email).
+     *
+     * Requires: Authorization: Bearer <token>
+     *
+     * Response: 200 OK { success: true, data: { id, fullName, skills, status,
+     * ... } }
+     */
+    @GetMapping("/me")
+    @PreAuthorize("hasRole('PROVIDER')")
+    public ResponseEntity<ApiResponse<ProviderDto>> getMyProfile(
+            @AuthenticationPrincipal UserDetails userDetails) {
+
+        // userDetails.getUsername() returns the email (used as JWT subject)
+        String email = userDetails.getUsername();
+        ProviderDto provider = authService.getProfile(
+                // Look up by email — delegate to a helper that finds by email
+                authService.findIdByEmail(email)
+        );
+
+        return ResponseEntity.ok(ApiResponse.ok("Profile fetched.", provider));
+    }
+
+    /**
+     * GET /api/provider/{providerId}
+     *
+     * Returns a provider's public profile by numeric ID. Used by the
+     * customer-facing worker detail screens.
+     *
+     * Requires: Authorization: Bearer <token>
+     *
+     * Response: 200 OK { success: true, data: ProviderDto }
+     */
+    @GetMapping("/{providerId}")
+    @PreAuthorize("hasRole('PROVIDER') or hasRole('CUSTOMER') or hasRole('ADMIN')")
+    public ResponseEntity<ApiResponse<ProviderDto>> getProvider(
+            @PathVariable Long providerId) {
+
+        ProviderDto provider = authService.getProfile(providerId);
+        return ResponseEntity.ok(ApiResponse.ok("Provider fetched.", provider));
+    }
+
+    @PutMapping("/me")
+    @PreAuthorize("hasRole('PROVIDER')")
+    public ResponseEntity<ApiResponse<ProviderDto>> updateMyProfile(
+            @AuthenticationPrincipal UserDetails userDetails,
+            @RequestBody UpdateProfileRequest request) {
+
+        String email = userDetails.getUsername();
+        Long providerId = authService.findIdByEmail(email);
+        ProviderDto updated = authService.updateProfile(providerId, request);
+        return ResponseEntity.ok(ApiResponse.ok("Profile updated successfully.", updated));
+    }
+}
+</file>
+
+<file path="src/main/java/com/services/in/dto/ApiResponse.java">
+package com.services.in.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+
+import lombok.NoArgsConstructor;
+
+/**
+ * Uniform API response envelope used for all endpoints.
+ *
+ * Success example:
+ * {
+ *   "success": true,
+ *   "message": "OTP sent successfully",
+ *   "data": null
+ * }
+ *
+ * Error example:
+ * {
+ *   "success": false,
+ *   "message": "OTP has expired. Please request a new one.",
+ *   "data": null
+ * }
+ */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class ApiResponse<T> {
+
+    private boolean success;
+    private String message;
+    private T data;
+
+    // ── Static factory helpers ──────────────────────────────────
+    public static <T> ApiResponse<T> ok(String message, T data) {
+        return ApiResponse.<T>builder()
+                .success(true)
+                .message(message)
+                .data(data)
+                .build();
+    }
+
+    public static <T> ApiResponse<T> ok(String message) {
+        return ApiResponse.<T>builder()
+                .success(true)
+                .message(message)
+                .build();
+    }
+
+    public static <T> ApiResponse<T> error(String message) {
+        return ApiResponse.<T>builder()
+                .success(false)
+                .message(message)
+                .build();
+    }
+}
+</file>
+
+<file path="src/main/java/com/services/in/dto/AuthResponse.java">
+package com.services.in.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+
+import lombok.NoArgsConstructor;
+
+/**
+ * Returned after a successful sign-in or skill-selection (registration complete).
+ * Matches the AuthResponse { token, user } shape in the BACKEND-API-PLAN.
+ */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class AuthResponse {
+
+    /**
+     * JWT bearer token — the frontend stores this for all subsequent requests
+     */
+    private String token;
+
+    /**
+     * Role claim embedded in the JWT. Always "PROVIDER" for the labour module.
+     * Matches the role claim values agreed in the API plan: customer | provider
+     * | admin
+     */
+    private String role;
+
+    /**
+     * Full provider profile included so the frontend doesn't need a second API
+     * call
+     */
+    private ProviderDto provider;
+}
+</file>
+
+<file path="src/main/java/com/services/in/dto/ForgotPasswordRequest.java">
+// // src/main/java/com/services/in/dto/ForgotPasswordRequest.java
+// package com.services.in.dto;
+// import jakarta.validation.constraints.NotBlank;
+// import jakarta.validation.constraints.Pattern;
+// import jakarta.validation.constraints.Size;
+// import lombok.AllArgsConstructor;
+// import lombok.Data;
+// import lombok.NoArgsConstructor;
+// @Data
+// @NoArgsConstructor
+// @AllArgsConstructor
+// public class ForgotPasswordRequest {
+//     @NotBlank(message = "Mobile number is required")
+//     @Pattern(regexp = "^[6-9]\\d{9}$", message = "Enter a valid 10-digit Indian mobile number")
+//     private String mobile;
+//     @NotBlank(message = "New password is required")
+//     @Size(min = 8, message = "Password must be at least 8 characters")
+//     private String newPassword;
+// // }
+// package com.services.in.dto;
+// import jakarta.validation.constraints.NotBlank;
+// import jakarta.validation.constraints.Pattern;
+// import jakarta.validation.constraints.Size;
+// import lombok.AllArgsConstructor;
+// import lombok.Data;
+// import lombok.NoArgsConstructor;
+// /**
+//  * Request body for POST /api/provider/auth/reset-password
+//  *
+//  * OTP is verified in the preceding POST /api/provider/auth/verify-otp step and
+//  * is NOT required here again. Sending otp in this request would cause a
+//  * "Validation failed" error on the frontend because the frontend only sends {
+//  * mobile, newPassword } after OTP has already been consumed.
+//  */
+// @Data
+// @NoArgsConstructor
+// @AllArgsConstructor
+// public class ForgotPasswordRequest {
+//     @NotBlank(message = "Mobile number is required")
+//     @Pattern(regexp = "^[6-9]\\d{9}$", message = "Enter a valid 10-digit Indian mobile number")
+//     private String mobile;
+//     @NotBlank(message = "New password is required")
+//     @Size(min = 8, message = "Password must be at least 8 characters")
+//     private String newPassword;
+// }
+package com.services.in.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class ForgotPasswordRequest {
+
+    @NotBlank(message = "Mobile number is required")
+    @Pattern(regexp = "^[6-9]\\d{9}$", message = "Enter a valid 10-digit Indian mobile number")
+    private String mobile;
+
+    @NotBlank(message = "New password is required")
+    @Size(min = 8, message = "Password must be at least 8 characters")
+    private String newPassword;
+}
+</file>
+
+<file path="src/main/java/com/services/in/dto/ProviderDto.java">
+package com.services.in.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+
+/**
+ * Provider profile DTO returned in API responses.
+ *
+ * Field names deliberately match: - WorkerSummaryDto in BACKEND-API-PLAN (for
+ * worker list cards) - ProviderDto in BACKEND-API-PLAN (for provider dashboard)
+ *
+ * Used in AuthResponse, GET /api/provider/{id}, etc.
+ */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class ProviderDto {
+
+    /**
+     * Database PK — used as providerId / workerId in all provider endpoints
+     */
+    private Long id;
+
+    private String fullName;
+
+    /**
+     * Two-letter initials, e.g. "RK"
+     */
+    private String initials;
+
+    private String mobile;
+    private String email;
+    private String area;
+
+    /**
+     * Human-readable string, e.g. "3 Years Exp."
+     */
+    private String experience;
+
+    private Double rating;
+    private Integer reviews;
+
+    /**
+     * Badge label, e.g. "Top Rated"
+     */
+    private String badge;
+
+    /**
+     * Badge colour hex, e.g. "#E8763A"
+     */
+    private String badgeColor;
+
+    private Boolean available;
+
+    /**
+     * Human-readable distance string, e.g. "1.2 km away"
+     */
+    private String location;
+
+    /**
+     * Always "PROVIDER" for this module
+     */
+    private String role;
+
+    /**
+     * Account state: PENDING_OTP | PENDING_SKILLS | ACTIVE | SUSPENDED
+     */
+    private String status;
+
+    /**
+     * Selected service category titles, e.g. ["Household", "Repairs"]
+     */
+    private List<String> skills;
+
+    private String dateOfBirth;
+    private String gender;
+    private String bloodGroup;
+    private String city;
+    private String state;
+    private String pinCode;
+    private String bio;
+    private String aadhaarNumber;
+    private String emergencyContact;
+    private String emergencyName;
+    private String kycStatus;
+    private Integer experienceYears;
+}
+</file>
+
+<file path="src/main/java/com/services/in/dto/ProviderSignInRequest.java">
+package com.services.in.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+import lombok.NoArgsConstructor;
+
+/**
+ * Request body for POST /api/provider/auth/signin.
+ * Matches user/SignIn.js — provider logs in with mobile + password.
+ */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class ProviderSignInRequest {
+
+    @NotBlank(message = "Mobile number is required")
+    private String mobile;
+
+    @NotBlank(message = "Password is required")
+    private String password;
+}
+</file>
+
+<file path="src/main/java/com/services/in/dto/ProviderSignUpRequest.java">
+// package com.services.in.dto;
+// import jakarta.validation.constraints.Email;
+// import jakarta.validation.constraints.Max;
+// import jakarta.validation.constraints.Min;
+// import jakarta.validation.constraints.NotBlank;
+// import jakarta.validation.constraints.Pattern;
+// import jakarta.validation.constraints.Size;
+// import lombok.AllArgsConstructor;
+// import lombok.Builder;
+// import lombok.Data;
+// import lombok.NoArgsConstructor;
+// /**
+//  * Step 1 of provider signup — collects personal details. Matches the personal
+//  * info fields in user/SignUp.js (step 0 & 1).
+//  *
+//  * Flow: POST /api/provider/auth/signup → sends OTP → verify OTP → select skills
+//  * → active
+//  */
+// @Data
+// @Builder
+// @NoArgsConstructor
+// @AllArgsConstructor
+// public class ProviderSignUpRequest {
+//     @NotBlank(message = "Full name is required")
+//     @Size(min = 2, max = 100, message = "Full name must be between 2 and 100 characters")
+//     private String fullName;
+//     /**
+//      * 10-digit Indian mobile number (without country code). Frontend sends "+91
+//      * XXXXXXXXXX", the service strips the prefix.
+//      */
+//     @NotBlank(message = "Mobile number is required")
+//     @Pattern(regexp = "^[6-9]\\d{9}$", message = "Enter a valid 10-digit Indian mobile number")
+//     private String mobile;
+//     @NotBlank(message = "Email is required")
+//     @Email(message = "Enter a valid email address")
+//     private String email;
+//     @NotBlank(message = "Password is required")
+//     @Size(min = 8, message = "Password must be at least 8 characters")
+//     private String password;
+//     /**
+//      * Service area / locality, e.g. "Banjara Hills, Hyderabad"
+//      */
+//     @Size(max = 200, message = "Area must be under 200 characters")
+//     private String area;
+//     /**
+//      * Optional years of experience (integer) at signup time
+//      */
+//     @Min(value = 0, message = "Experience years cannot be negative")
+//     @Max(value = 60, message = "Experience years seems too high")
+//     private Integer experienceYears;
+//     // ── Document fields (base64 encoded) ──────────────────────
+//     // Optional at signup — admin can verify later
+//     private String aadhaarBase64;   // base64 string of the image
+//     private String aadhaarMimeType; // e.g. "image/jpeg"
+//     private String panBase64;
+//     private String panMimeType;
+// }
+package com.services.in.dto;
+
+import org.springframework.web.multipart.MultipartFile;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class ProviderSignUpRequest {
+
+    @NotBlank(message = "Full name is required")
+    @Size(min = 2, max = 100)
+    private String fullName;
+
+    @NotBlank(message = "Mobile number is required")
+    @Pattern(regexp = "^[6-9]\\d{9}$", message = "Enter a valid 10-digit Indian mobile number")
+    private String mobile;
+
+    @NotBlank(message = "Email is required")
+    @Email(message = "Enter a valid email address")
+    private String email;
+
+    @NotBlank(message = "Password is required")
+    @Size(min = 8, message = "Password must be at least 8 characters")
+    private String password;
+
+    @Size(max = 200)
+    private String area;
+
+    @Min(0)
+    @Max(60)
+    private Integer experienceYears;
+
+    // Documents come as MultipartFile via multipart/form-data
+    private MultipartFile aadhaarFile;
+    private MultipartFile panFile;
+}
+</file>
+
+<file path="src/main/java/com/services/in/dto/SelectSkillsRequest.java">
+package com.services.in.dto;
+
+import jakarta.validation.constraints.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+
+/**
+ * Request body for POST /api/provider/auth/select-skills.
+ *
+ * Sent after OTP verification — matches the "Continue" button action on
+ * user/SelectServicesScreen.js. Contains the provider email (used to identify
+ * which Labour record to update) and the list of selected skill category titles.
+ *
+ * Example skills: ["Household", "Repairs", "Personal Care"]
+ */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class SelectSkillsRequest {
+
+    @NotBlank(message = "Email is required")
+    @Email(message = "Enter a valid email address")
+    private String email;
+
+    @NotNull(message = "Skills list is required")
+    @Size(min = 1, message = "Select at least one skill category")
+    private List<@NotBlank(message = "Skill name must not be blank") String> skills;
+}
+</file>
+
+<file path="src/main/java/com/services/in/dto/SendOtpRequest.java">
+// package com.services.in.dto;
+// import jakarta.validation.constraints.Email;
+// import jakarta.validation.constraints.NotBlank;
+// import lombok.AllArgsConstructor;
+// import lombok.Data;
+// import lombok.NoArgsConstructor;
+// /**
+//  * Request body for POST /api/provider/auth/send-otp. Used both for signup email
+//  * verification and forgot-password flows.
+//  */
+// @Data
+// @NoArgsConstructor
+// @AllArgsConstructor
+// public class SendOtpRequest {
+//     @NotBlank(message = "Mobile number is required")
+//     private String email;   // reused field — now carries mobile number
+//     /**
+//      * OTP purpose – must be one of: SIGNUP, FORGOT_PASSWORD, LOGIN_OTP.
+//      * Defaults to SIGNUP if omitted or blank.
+//      */
+//     private String purpose;
+// }
+package com.services.in.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class SendOtpRequest {
+
+    @NotBlank(message = "Mobile number is required")
+    @Pattern(regexp = "^[6-9]\\d{9}$", message = "Enter a valid 10-digit Indian mobile number")
+    private String mobile;
+
+    private String purpose;
+}
+</file>
+
+<file path="src/main/java/com/services/in/dto/ServiceCategoryDto.java">
+// package com.services.in.dto;
+// import lombok.AllArgsConstructor;
+// import lombok.Builder;
+// import lombok.Data;
+// import lombok.NoArgsConstructor;
+// /**
+//  * DTO for GET /api/provider/categories — returns the list of service categories
+//  * that the provider sees on SelectServicesScreen.
+//  */
+// @Data
+// @Builder
+// @NoArgsConstructor
+// @AllArgsConstructor
+// public class ServiceCategoryDto {
+//     private Long id;
+//     /**
+//      * Emoji icon, e.g. "🏠"
+//      */
+//     private String icon;
+//     /**
+//      * Display title, e.g. "Household"
+//      */
+//     private String title;
+//     /**
+//      * Sub-text description, e.g. "Cleaning, Cooking, Maid, etc."
+//      */
+//     private String description;
+// }
+package com.services.in.dto;
+
+import java.util.List;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * DTO for GET /api/provider/categories — returns the list of service categories
+ * that the provider sees on SelectServicesScreen, now including sub-skills.
+ */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class ServiceCategoryDto {
+
+    private Long id;
+
+    /**
+     * Emoji icon, e.g. "🏠"
+     */
+    private String icon;
+
+    /**
+     * Display title, e.g. "Household"
+     */
+    private String title;
+
+    /**
+     * Sub-text description, e.g. "Cleaning, Cooking, Maid, etc."
+     */
+    private String description;
+
+    /**
+     * List of specific sub-skills under this category. e.g. ["Home Cleaning",
+     * "Cooking", "Maid Service", "Laundry", "Baby Sitting"] Frontend uses these
+     * to build the grouped skill picker.
+     */
+    private List<String> subSkills;
+}
+</file>
+
+<file path="src/main/java/com/services/in/dto/UpdateProfileRequest.java">
+package com.services.in.dto;
+
+import java.util.List;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class UpdateProfileRequest {
+
+    private String fullName;
+    private String area;
+    private String city;
+    private String state;
+    private String pinCode;
+    private String dateOfBirth;
+    private String gender;
+    private String bloodGroup;
+    private String bio;
+    private String aadhaarNumber;
+    private String emergencyContact;
+    private String emergencyName;
+    private Integer experienceYears;
+    private List<String> skills;
+}
+</file>
+
+<file path="src/main/java/com/services/in/dto/VerifyOtpRequest.java">
+// package com.services.in.dto;
+// import jakarta.validation.constraints.Email;
+// import jakarta.validation.constraints.NotBlank;
+// import jakarta.validation.constraints.Pattern;
+// import jakarta.validation.constraints.Size;
+// import lombok.AllArgsConstructor;
+// import lombok.Data;
+// import lombok.NoArgsConstructor;
+// /**
+//  * Request body for POST /api/provider/auth/verify-otp.
+//  */
+// @Data
+// @NoArgsConstructor
+// @AllArgsConstructor
+// public class VerifyOtpRequest {
+//     @NotBlank(message = "Mobile number is required")
+//     private String email;   // reused field — now carries mobile number
+//     @NotBlank(message = "OTP is required")
+//     @Size(min = 6, max = 6, message = "OTP must be exactly 6 digits")
+//     @Pattern(regexp = "^\\d{6}$", message = "OTP must consist of 6 digits only")
+//     private String otp;
+//     /**
+//      * Must match the purpose used when the OTP was sent. Defaults to SIGNUP if
+//      * omitted.
+//      */
+//     private String purpose;
+// }
+package com.services.in.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class VerifyOtpRequest {
+
+    @NotBlank(message = "Mobile number is required")
+    @Pattern(regexp = "^[6-9]\\d{9}$", message = "Enter a valid 10-digit Indian mobile number")
+    private String mobile;
+
+    @NotBlank(message = "OTP is required")
+    @Size(min = 6, max = 6, message = "OTP must be exactly 6 digits")
+    @Pattern(regexp = "^\\d{6}$", message = "OTP must consist of 6 digits only")
+    private String otp;
+
+    private String purpose;
+}
+</file>
+
+<file path="src/main/java/com/services/in/entity/OtpToken.java">
+package com.services.in.entity;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.time.LocalDateTime;
+/**
+ * Stores the one-time password (OTP) sent to the provider's email.
+ * Each new OTP request invalidates previous tokens for the same email.
+ */
+@Entity
+@Table(name = "otp_tokens", indexes = {
+    @Index(name = "idx_otp_email", columnList = "email"),
+    @Index(name = "idx_otp_token", columnList = "token")
+})
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class OtpToken {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    /**
+     * The email address this OTP was sent to
+     */
+    @Column(nullable = false, length = 150)
+    private String email;
+    /**
+     * 6-digit numeric OTP code
+     */
+    @Column(nullable = false, length = 10)
+    private String token;
+    /**
+     * When this OTP was generated
+     */
+    @Column(nullable = false)
+    private LocalDateTime createdAt;
+    /**
+     * When this OTP expires
+     */
+    @Column(nullable = false)
+    private LocalDateTime expiresAt;
+    /**
+     * Whether this OTP has already been successfully used
+     */
+    @Builder.Default
+    private Boolean used = false;
+    /**
+     * Purpose of this OTP
+     */
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 30)
+    @Builder.Default
+    private OtpPurpose purpose = OtpPurpose.SIGNUP;
+    public boolean isExpired() {
+        return LocalDateTime.now().isAfter(expiresAt);
+    }
+    public boolean isValid() {
+        return !used && !isExpired();
+    }
+    public enum OtpPurpose {
+        SIGNUP,
+        FORGOT_PASSWORD,
+        LOGIN_OTP
+    }
+}
+</file>
+
+<file path="src/main/java/com/services/in/entity/ServiceCategory.java">
+// package com.services.in.entity;
+// import jakarta.persistence.*;
+// import lombok.AllArgsConstructor;
+// import lombok.Builder;
+// import lombok.Data;
+// import lombok.NoArgsConstructor;
+// /**
+//  * Represents a top-level service category shown on SelectServicesScreen.
+//  * These are pre-seeded at startup and never created by the labour themselves.
+//  *
+//  * Matches the SERVICES array in user/SelectServicesScreen.js:
+//  *   { id: 1, icon: '🏠', title: 'Household', desc: 'Cleaning, Cooking, Maid, etc.' }
+//  */
+// @Entity
+// @Table(name = "service_categories")
+// @Data
+// @Builder
+// @NoArgsConstructor
+// @AllArgsConstructor
+// public class ServiceCategory {
+//     @Id
+//     @GeneratedValue(strategy = GenerationType.IDENTITY)
+//     private Long id;
+//     /**
+//      * Display emoji icon, e.g. "🏠"
+//      */
+//     @Column(nullable = false, length = 10)
+//     private String icon;
+//     /**
+//      * Short title, e.g. "Household"
+//      */
+//     @Column(nullable = false, length = 100)
+//     private String title;
+//     /**
+//      * Description line, e.g. "Cleaning, Cooking, Maid, etc."
+//      */
+//     @Column(nullable = false, length = 300)
+//     private String description;
+//     /**
+//      * Sort order for UI display
+//      */
+//     private Integer sortOrder;
+//     /**
+//      * Whether this category is currently active / visible
+//      */
+//     @Builder.Default
+//     private Boolean active = true;
+// }
+package com.services.in.entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.CollectionTable;
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OrderColumn;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * Represents a top-level service category shown on SelectServicesScreen. Each
+ * category now holds a list of sub-skills that providers can choose from.
+ *
+ * Matches the SERVICES array in user/SelectServicesScreen.js: { id: 1, icon:
+ * '🏠', title: 'Household', desc: 'Cleaning, Cooking, Maid, etc.' }
+ */
+@Entity
+@Table(name = "service_categories")
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class ServiceCategory {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    /**
+     * Display emoji icon, e.g. "🏠"
+     */
+    @Column(nullable = false, length = 10)
+    private String icon;
+
+    /**
+     * Short title, e.g. "Household"
+     */
+    @Column(nullable = false, length = 100)
+    private String title;
+
+    /**
+     * Description line, e.g. "Cleaning, Cooking, Maid, etc."
+     */
+    @Column(nullable = false, length = 300)
+    private String description;
+
+    /**
+     * Sort order for UI display
+     */
+    private Integer sortOrder;
+
+    /**
+     * Whether this category is currently active / visible
+     */
+    @Builder.Default
+    private Boolean active = true;
+
+    /**
+     * Sub-skills / specific services under this category. e.g. Household →
+     * ["Home Cleaning", "Cooking", "Maid Service", "Laundry", "Baby Sitting"]
+     * Stored in a separate join table: service_category_sub_skills
+     */
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(
+            name = "service_category_sub_skills",
+            joinColumns = @JoinColumn(name = "category_id")
+    )
+    @Column(name = "sub_skill", length = 100)
+    @OrderColumn(name = "skill_order")
+    @Builder.Default
+    private List<String> subSkills = new ArrayList<>();
+}
+</file>
+
+<file path="src/main/java/com/services/in/entity/ServiceProvider.java">
+package com.services.in.entity;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.CollectionTable;
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * Represents a Labour / Service Provider in the ServeNow platform. Mirrors the
+ * provider fields used in the React Native frontend: user/SignUp.js,
+ * user/SelectServicesScreen.js, user/SignIn.js
+ */
+@Entity
+@Table(name = "ServiceProviders",
+        uniqueConstraints = {
+            @UniqueConstraint(columnNames = "email"),
+            @UniqueConstraint(columnNames = "mobile")
+        })
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class ServiceProvider {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    /**
+     * Full name shown in the provider profile and worker list cards
+     */
+    @Column(nullable = false, length = 100)
+    private String fullName;
+    /**
+     * Derived two-letter initials used in avatar circles (e.g. "RK" for Ramesh
+     * Kumar)
+     */
+    @Column(nullable = false, length = 5)
+    private String initials;
+    /**
+     * Primary login credential — 10-digit Indian mobile (no country code
+     * stored). Frontend sends it as "+91 XXXXXXXXXX" so we strip the prefix
+     * before saving.
+     */
+    @Column(nullable = false, length = 15)
+    private String mobile;
+    /**
+     * Email used for OTP delivery via Spring Mail
+     */
+    @Column(nullable = false, length = 150)
+    private String email;
+    /**
+     * BCrypt-hashed password
+     */
+    @Column(nullable = false)
+    private String password;
+    /**
+     * Service area / locality string (e.g. "Banjara Hills, Hyderabad")
+     */
+    @Column(length = 200)
+    private String area;
+    /**
+     * Years of experience string, e.g. "3 Years Exp." Stored as string to match
+     * the WorkerSummaryDto.experience field exactly.
+     */
+    @Column(length = 50)
+    private String experience;
+    /**
+     * Comma-separated years integer, e.g. 3
+     */
+    private Integer experienceYears;
+
+    /**
+     * Average rating, computed from completed bookings
+     */
+    @Column(precision = 3)
+    private Double rating;
+    /**
+     * Number of ratings/reviews received
+     */
+    private Integer reviews;
+    /**
+     * Badge label, e.g. "Top Rated", "New", "Verified"
+     */
+    @Column(length = 50)
+    private String badge;
+    /**
+     * Badge colour hex, e.g. "#E8763A"
+     */
+    @Column(length = 20)
+    private String badgeColor;
+    /**
+     * Whether the provider is currently accepting jobs
+     */
+    @Builder.Default
+    private Boolean available = false;
+    /**
+     * Human-readable distance/location string, e.g. "1.2 km away"
+     */
+    @Column(length = 100)
+    private String location;
+    /**
+     * Role is always PROVIDER for this module
+     */
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 20)
+    @Builder.Default
+    private Role role = Role.PROVIDER;
+    /**
+     * Account state machine
+     */
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 20)
+    @Builder.Default
+    private AccountStatus status = AccountStatus.PENDING_OTP;
+    /**
+     * Skills selected during the SelectServicesScreen step. Stored as a
+     * separate table to allow querying by skill.
+     */
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "service_provider_skills", joinColumns = @JoinColumn(name = "service_provider_id"))
+    @Column(name = "skill", length = 100)
+    @Builder.Default
+    private List<String> skills = new ArrayList<>();
+    /**
+     * Timestamp of account creation
+     */
+    @Column(nullable = false, updatable = false)
+    private LocalDateTime createdAt;
+    /**
+     * Timestamp of last profile update
+     */
+    private LocalDateTime updatedAt;
+
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now();
+        updatedAt = LocalDateTime.now();
+        if (initials == null && fullName != null) {
+            initials = deriveInitials(fullName);
+        }
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        updatedAt = LocalDateTime.now();
+    }
+
+    /**
+     * Derives "RK" from "Ramesh Kumar", max 2 chars
+     */
+    private static String deriveInitials(String name) {
+        if (name == null || name.isBlank()) {
+            return "??";
+        }
+        String[] parts = name.trim().split("\\s+");
+        if (parts.length == 1) {
+            return parts[0].substring(0, Math.min(2, parts[0].length())).toUpperCase();
+        }
+        return (String.valueOf(parts[0].charAt(0)) + String.valueOf(parts[parts.length - 1].charAt(0))).toUpperCase();
+    }
+
+    public enum Role {
+        PROVIDER, CUSTOMER, ADMIN
+    }
+
+    public enum AccountStatus {
+        /**
+         * Email OTP sent but not yet verified
+         */
+        PENDING_OTP,
+        /**
+         * OTP verified but skills not yet selected
+         */
+        PENDING_SKILLS,
+        /**
+         * Fully registered and active
+         */
+        ACTIVE,
+        /**
+         * Suspended by admin
+         */
+        SUSPENDED
+    }
+
+    // ── KYC Documents (file paths on disk) ───────────────────
+    /**
+     * Relative path to the uploaded Aadhaar image, e.g.
+     * "documents/provider_3/aadhaar.jpg"
+     */
+    @Column(length = 300)
+    private String aadhaarPath;
+
+    /**
+     * Relative path to the uploaded PAN card image, e.g.
+     * "documents/provider_3/pan.jpg"
+     */
+    @Column(length = 300)
+    private String panPath;
+
+    /**
+     * KYC verification status set by admin: PENDING | VERIFIED | REJECTED
+     */
+    @Builder.Default
+    @Column(length = 20)
+    private String kycStatus = "PENDING";
+
+    // Add these fields to ServiceProvider.java
+    @Column(length = 10)
+    private String dateOfBirth;
+
+    @Column(length = 20)
+    private String gender;
+
+    @Column(length = 10)
+    private String bloodGroup;
+
+    @Column(length = 100)
+    private String city;
+
+    @Column(length = 50)
+    private String state;
+
+    @Column(length = 6)
+    private String pinCode;
+
+    @Column(length = 500)
+    private String bio;
+
+    @Column(length = 12)
+    private String aadhaarNumber;
+
+    @Column(length = 10)
+    private String emergencyContact;
+
+    @Column(length = 100)
+    private String emergencyName;
+}
+</file>
+
+<file path="src/main/java/com/services/in/exception/AccountStateException.java">
+package com.services.in.exception;
+
+import org.springframework.http.HttpStatus;
+
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(HttpStatus.FORBIDDEN)
+public class AccountStateException extends RuntimeException {
+
+    public AccountStateException(String message) {
+        super(message);
+    }
+}
+</file>
+
+<file path="src/main/java/com/services/in/exception/GlobalExceptionHandler.java">
+package com.services.in.exception;
+
+import com.services.in.dto.ApiResponse;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Centralised exception → HTTP response mapper.
+ * All controller methods throw domain exceptions; this class converts them
+ * into the standard ApiResponse envelope so the frontend gets a consistent JSON shape.
+ */
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+
+    // ── Validation failures (Bean Validation) ──────────────────
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<ApiResponse<Map<String, String>>> handleValidation(
+            MethodArgumentNotValidException ex) {
+
+        Map<String, String> errors = new HashMap<>();
+        ex.getBindingResult().getAllErrors().forEach(error -> {
+            String field = error instanceof FieldError fe ? fe.getField() : error.getObjectName();
+            errors.put(field, error.getDefaultMessage());
+        });
+
+        ApiResponse<Map<String, String>> response = ApiResponse.<Map<String, String>>builder()
+                .success(false)
+                .message("Validation failed")
+                .data(errors)
+                .build();
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+    }
+
+    // ── Domain exceptions ──────────────────────────────────────
+
+    @ExceptionHandler(ProviderAlreadyExistsException.class)
+    public ResponseEntity<ApiResponse<Void>> handleAlreadyExists(ProviderAlreadyExistsException ex) {
+        return ResponseEntity.status(HttpStatus.CONFLICT)
+                .body(ApiResponse.error(ex.getMessage()));
+    }
+
+    @ExceptionHandler(ProviderNotFoundException.class)
+    public ResponseEntity<ApiResponse<Void>> handleNotFound(ProviderNotFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(ApiResponse.error(ex.getMessage()));
+    }
+
+    @ExceptionHandler(InvalidOtpException.class)
+    public ResponseEntity<ApiResponse<Void>> handleInvalidOtp(InvalidOtpException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(ApiResponse.error(ex.getMessage()));
+    }
+
+    @ExceptionHandler(InvalidCredentialsException.class)
+    public ResponseEntity<ApiResponse<Void>> handleInvalidCredentials(InvalidCredentialsException ex) {
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                .body(ApiResponse.error(ex.getMessage()));
+    }
+
+    @ExceptionHandler(AccountStateException.class)
+    public ResponseEntity<ApiResponse<Void>> handleAccountState(AccountStateException ex) {
+        return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                .body(ApiResponse.error(ex.getMessage()));
+    }
+
+    // ── Catch-all ─────────────────────────────────────────────
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ApiResponse<Void>> handleGeneric(Exception ex) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(ApiResponse.error("An unexpected error occurred. Please try again."));
+    }
+}
+</file>
+
+<file path="src/main/java/com/services/in/exception/InvalidCredentialsException.java">
+package com.services.in.exception;
+
+import org.springframework.http.HttpStatus;
+
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(HttpStatus.UNAUTHORIZED)
+public class InvalidCredentialsException extends RuntimeException {
+
+    public InvalidCredentialsException(String message) {
+        super(message);
+    }
+}
+</file>
+
+<file path="src/main/java/com/services/in/exception/InvalidOtpException.java">
+package com.services.in.exception;
+
+import org.springframework.http.HttpStatus;
+
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(HttpStatus.BAD_REQUEST)
+public class InvalidOtpException extends RuntimeException {
+
+    public InvalidOtpException(String message) {
+        super(message);
+    }
+}
+</file>
+
+<file path="src/main/java/com/services/in/exception/ProviderAlreadyExistsException.java">
+package com.services.in.exception;
+
+import org.springframework.http.HttpStatus;
+
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(HttpStatus.CONFLICT)
+public class ProviderAlreadyExistsException extends RuntimeException {
+
+    public ProviderAlreadyExistsException(String message) {
+        super(message);
+    }
+}
+</file>
+
+<file path="src/main/java/com/services/in/exception/ProviderNotFoundException.java">
+package com.services.in.exception;
+
+import org.springframework.http.HttpStatus;
+
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(HttpStatus.NOT_FOUND)
+public class ProviderNotFoundException extends RuntimeException {
+
+    public ProviderNotFoundException(String message) {
+        super(message);
+    }
+}
+</file>
+
+<file path="src/main/java/com/services/in/InApplication.java">
+package com.services.in;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class InApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(InApplication.class, args);
+	}
+
+}
+</file>
+
+<file path="src/main/java/com/services/in/repository/OtpTokenRepository.java">
+package com.services.in.repository;
+
+import com.services.in.entity.OtpToken;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Optional;
+
+@Repository
+public interface OtpTokenRepository extends JpaRepository<OtpToken, Long> {
+
+    /**
+     * Find the latest unused, unexpired OTP for a given email and purpose.
+     * Ordered by createdAt DESC so we always pick the most recent one.
+     */
+    @Query("SELECT o FROM OtpToken o " +
+           "WHERE o.email = :email AND o.purpose = :purpose AND o.used = false " +
+           "ORDER BY o.createdAt DESC LIMIT 1")
+    Optional<OtpToken> findLatestValidOtp(
+            @Param("email") String email,
+            @Param("purpose") OtpToken.OtpPurpose purpose
+    );
+
+    /**
+     * Invalidate all previous OTPs for the same email + purpose before issuing a new one.
+     * This prevents replay attacks.
+     */
+    @Modifying
+    @Transactional
+    @Query("UPDATE OtpToken o SET o.used = true " +
+           "WHERE o.email = :email AND o.purpose = :purpose AND o.used = false")
+    void invalidatePreviousOtps(
+            @Param("email") String email,
+            @Param("purpose") OtpToken.OtpPurpose purpose
+    );
+}
+</file>
+
+<file path="src/main/java/com/services/in/repository/ServiceCategoryRepository.java">
+package com.services.in.repository;
+
+import com.services.in.entity.ServiceCategory;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface ServiceCategoryRepository extends JpaRepository<ServiceCategory, Long> {
+
+    List<ServiceCategory> findByActiveTrueOrderBySortOrderAsc();
+}
+</file>
+
+<file path="src/main/java/com/services/in/repository/ServiceProviderRepository.java">
+package com.services.in.repository;
+
+import com.services.in.entity.ServiceProvider;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface ServiceProviderRepository extends JpaRepository<ServiceProvider, Long> {
+
+    Optional<ServiceProvider> findByEmail(String email);
+
+    Optional<ServiceProvider> findByMobile(String mobile);
+
+    boolean existsByEmail(String email);
+
+    boolean existsByMobile(String mobile);
+
+    /** Find all active providers that offer a given skill (case-insensitive) */
+    @Query("SELECT l FROM ServiceProvider l JOIN l.skills s " +
+           "WHERE l.status = 'ACTIVE' AND LOWER(s) LIKE LOWER(CONCAT('%', :skill, '%'))")
+    List<ServiceProvider> findActiveBySkill(@Param("skill") String skill);
+
+    /** Find all active providers in a given area */
+    List<ServiceProvider> findByStatusAndAreaContainingIgnoreCase(ServiceProvider.AccountStatus status, String area);
+}
+</file>
+
+<file path="src/main/java/com/services/in/security/JwtAuthenticationFilter.java">
+package com.services.in.security;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.lang.NonNull;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import java.io.IOException;
+
+/**
+ * Intercepts every request, extracts the JWT from the Authorization header,
+ * validates it, and sets the authentication in the SecurityContext.
+ *
+ * Header format expected by the frontend:
+ *   Authorization: Bearer <token>
+ */
+@Component
+public class JwtAuthenticationFilter extends OncePerRequestFilter {
+
+    private final JwtUtil jwtUtil;
+    private final LabourUserDetailsService userDetailsService;
+
+    public JwtAuthenticationFilter(JwtUtil jwtUtil,
+            LabourUserDetailsService userDetailsService) {
+        this.jwtUtil = jwtUtil;
+        this.userDetailsService = userDetailsService;
+    }
+
+    @Override
+    protected void doFilterInternal(@NonNull HttpServletRequest request,
+            @NonNull HttpServletResponse response,
+            @NonNull FilterChain filterChain)
+            throws ServletException, IOException {
+
+        String token = extractToken(request);
+
+        if (StringUtils.hasText(token) && jwtUtil.validateToken(token)) {
+            String email = jwtUtil.extractEmail(token);
+
+            // Only set auth if the SecurityContext is not already populated
+            if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+                UserDetails userDetails = userDetailsService.loadUserByUsername(email);
+
+                UsernamePasswordAuthenticationToken authToken
+                        = new UsernamePasswordAuthenticationToken(
+                                userDetails,
+                                null,
+                                userDetails.getAuthorities()
+                        );
+                authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                SecurityContextHolder.getContext().setAuthentication(authToken);
+            }
+        }
+
+        filterChain.doFilter(request, response);
+    }
+
+    /**
+     * Extract "Bearer <token>" from the Authorization header
+     */
+    private String extractToken(HttpServletRequest request) {
+        String header = request.getHeader("Authorization");
+        if (StringUtils.hasText(header) && header.startsWith("Bearer ")) {
+            return header.substring(7);
+        }
+        return null;
+    }
+}
+</file>
+
+<file path="src/main/java/com/services/in/security/JwtUtil.java">
+package com.services.in.security;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtException;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
+
+import java.nio.charset.StandardCharsets;
+import java.security.Key;
+import java.util.Date;
+import java.util.Map;
+
+/**
+ * Handles JWT creation and validation.
+ *
+ * Token claims include:
+ *   - sub   : provider email (used to reload from DB on each request)
+ *   - role  : "PROVIDER" (matches auth token role claim contract in API plan)
+ *   - id    : provider database id
+ */
+@Component
+public class JwtUtil {
+
+    private final Key signingKey;
+    private final long expirationMs;
+
+    public JwtUtil(
+            @Value("${app.jwt.secret}") String secret,
+            @Value("${app.jwt.expiration-ms}") long expirationMs) {
+        this.signingKey = Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
+        this.expirationMs = expirationMs;
+    }
+
+    /**
+     * Generate a signed JWT for a fully active provider.
+     *
+     * @param email      provider email – used as the JWT subject
+     * @param providerId provider database ID – embedded as an extra claim
+     * @param role       role string, always "PROVIDER" from this module
+     * @return signed compact JWT string
+     */
+    public String generateToken(String email, Long providerId, String role) {
+        Date now = new Date();
+        Date expiry = new Date(now.getTime() + expirationMs);
+
+        return Jwts.builder()
+                .setSubject(email)
+                .addClaims(Map.of(
+                        "id", providerId,
+                        "role", role
+                ))
+                .setIssuedAt(now)
+                .setExpiration(expiry)
+                .signWith(signingKey, SignatureAlgorithm.HS256)
+                .compact();
+    }
+
+    /**
+     * Extract the email (subject) from a token without validation.
+     * Always call {@link #validateToken(String)} first.
+     */
+    public String extractEmail(String token) {
+        return parseClaims(token).getSubject();
+    }
+
+    public Long extractProviderId(String token) {
+        Object id = parseClaims(token).get("id");
+        if (id instanceof Integer i) return i.longValue();
+        if (id instanceof Long l) return l;
+        return null;
+    }
+
+    public String extractRole(String token) {
+        return (String) parseClaims(token).get("role");
+    }
+
+    /**
+     * Validate signature and expiry.
+     *
+     * @return true if the token is well-formed, signed with our key, and not expired
+     */
+    public boolean validateToken(String token) {
+        try {
+            parseClaims(token);
+            return true;
+        } catch (JwtException | IllegalArgumentException ex) {
+            return false;
+        }
+    }
+
+    // ── Internal ─────────────────────────────────────────────
+
+    private Claims parseClaims(String token) {
+        return Jwts.parserBuilder()
+                .setSigningKey(signingKey)
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+    }
+}
+</file>
+
+<file path="src/main/java/com/services/in/security/LabourUserDetailsService.java">
+package com.services.in.security;
+
+import com.services.in.entity.*;
+import com.services.in.repository.ServiceProviderRepository;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+/**
+ * Loads a Labour by email for Spring Security.
+ * The email is used as the JWT subject so we look up by email here.
+ */
+@Service
+public class LabourUserDetailsService implements UserDetailsService {
+
+    private final ServiceProviderRepository labourRepository;
+
+    public LabourUserDetailsService(ServiceProviderRepository labourRepository) {
+        this.labourRepository = labourRepository;
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        ServiceProvider labour = labourRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException(
+                        "Provider not found with email: " + email));
+
+        return new User(
+                labour.getEmail(),
+                labour.getPassword(),
+                List.of(new SimpleGrantedAuthority("ROLE_" + labour.getRole().name()))
+        );
+    }
+}
+</file>
+
+<file path="src/main/java/com/services/in/security/ServiceProviderUserDetailsService.java">
+package com.services.in.security;
+
+import com.services.in.entity.ServiceProvider;
+import com.services.in.repository.ServiceProviderRepository;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+/**
+ * Loads a ServiceProvider by email for Spring Security.
+ * The email is used as the JWT subject so we look up by email here.
+ */
+@Service
+public class ServiceProviderUserDetailsService implements UserDetailsService {
+
+    private final ServiceProviderRepository serviceProviderRepository;
+
+    public ServiceProviderUserDetailsService(ServiceProviderRepository serviceProviderRepository) {
+        this.serviceProviderRepository = serviceProviderRepository;
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        ServiceProvider serviceProvider = serviceProviderRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException(
+                "Provider not found with email: " + email));
+
+        return new User(
+                serviceProvider.getEmail(),
+                serviceProvider.getPassword(),
+                List.of(new SimpleGrantedAuthority("ROLE_" + serviceProvider.getRole().name()))
+        );
+    }
+}
+</file>
+
+<file path="src/main/java/com/services/in/service/EmailService.java">
+package com.services.in.service;
+
+import jakarta.mail.MessagingException;
+import jakarta.mail.internet.MimeMessage;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.stereotype.Service;
+
+/**
+ * Sends transactional emails using Spring Boot's JavaMailSender (configured
+ * via spring.mail.* properties in application.properties).
+ *
+ * The sendOtp method is @Async so the HTTP response is not blocked while
+ * the SMTP round-trip completes.
+ */
+@Service
+public class EmailService {
+
+    private final JavaMailSender mailSender;
+
+    @Value("${app.mail.from}")
+    private String fromAddress;
+
+    @Value("${app.mail.from-name}")
+    private String fromName;
+
+    public EmailService(JavaMailSender mailSender) {
+        this.mailSender = mailSender;
+    }
+
+    /**
+     * Sends a 6-digit OTP to the provider's email for signup verification.
+     *
+     * @param toEmail   recipient email address
+     * @param otp       6-digit OTP string
+     * @param purpose   human-readable purpose, e.g. "account verification"
+     * @param expiryMin how many minutes until the OTP expires
+     */
+    @Async
+    public void sendOtpEmail(String toEmail, String otp, String purpose, int expiryMin) {
+        try {
+            MimeMessage message = mailSender.createMimeMessage();
+            MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
+
+            helper.setFrom(fromAddress, fromName);
+            helper.setTo(toEmail);
+            helper.setSubject("Your ServeNow OTP: " + otp);
+            helper.setText(buildOtpEmailHtml(otp, purpose, expiryMin), true);
+
+            mailSender.send(message);
+
+        } catch (MessagingException | java.io.UnsupportedEncodingException ex) {
+            // Log and re-throw as unchecked so the transaction isn't rolled back silently
+            throw new RuntimeException("Failed to send OTP email to " + toEmail, ex);
+        }
+    }
+
+    /**
+     * Sends a welcome email once the provider completes registration (skills selected).
+     *
+     * @param toEmail  recipient email
+     * @param fullName provider full name
+     */
+    @Async
+    public void sendWelcomeEmail(String toEmail, String fullName) {
+        try {
+            MimeMessage message = mailSender.createMimeMessage();
+            MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
+
+            helper.setFrom(fromAddress, fromName);
+            helper.setTo(toEmail);
+            helper.setSubject("Welcome to ServeNow, " + fullName + "!");
+            helper.setText(buildWelcomeEmailHtml(fullName), true);
+
+            mailSender.send(message);
+
+        } catch (MessagingException | java.io.UnsupportedEncodingException ex) {
+            throw new RuntimeException("Failed to send welcome email to " + toEmail, ex);
+        }
+    }
+
+    // ── HTML templates ────────────────────────────────────────
+
+    private String buildOtpEmailHtml(String otp, String purpose, int expiryMin) {
+        return """
+                <!DOCTYPE html>
+                <html>
+                <head>
+                  <meta charset="UTF-8"/>
+                  <style>
+                    body { font-family: 'Segoe UI', sans-serif; background:#f4f4f4; margin:0; padding:0; }
+                    .container { max-width:520px; margin:40px auto; background:#fff;
+                                 border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,.08); }
+                    .header { background:#1a1a2e; padding:28px 32px; }
+                    .logo { color:#fff; font-size:22px; font-weight:900; letter-spacing:1px; }
+                    .body { padding:32px; }
+                    .otp-box { background:#f0f4ff; border-radius:10px; padding:22px;
+                               text-align:center; margin:24px 0; }
+                    .otp { font-size:42px; font-weight:900; color:#1a1a2e; letter-spacing:10px; }
+                    .footer { background:#f8f8f8; padding:18px 32px; font-size:12px; color:#999; }
+                  </style>
+                </head>
+                <body>
+                  <div class="container">
+                    <div class="header"><span class="logo">ServeNow</span></div>
+                    <div class="body">
+                      <h2 style="color:#1a1a2e;margin-top:0;">Your verification code</h2>
+                      <p style="color:#555;">Use the code below for <strong>%s</strong>.
+                         It expires in <strong>%d minutes</strong>.</p>
+                      <div class="otp-box">
+                        <div class="otp">%s</div>
+                      </div>
+                      <p style="color:#777;font-size:13px;">
+                        If you did not request this code, please ignore this email.
+                        Never share your OTP with anyone.
+                      </p>
+                    </div>
+                    <div class="footer">
+                      &copy; 2026 ServeNow &bull; All rights reserved
+                    </div>
+                  </div>
+                </body>
+                </html>
+                """.formatted(purpose, expiryMin, otp);
+    }
+
+    private String buildWelcomeEmailHtml(String fullName) {
+        return """
+                <!DOCTYPE html>
+                <html>
+                <head>
+                  <meta charset="UTF-8"/>
+                  <style>
+                    body { font-family: 'Segoe UI', sans-serif; background:#f4f4f4; margin:0; padding:0; }
+                    .container { max-width:520px; margin:40px auto; background:#fff;
+                                 border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,.08); }
+                    .header { background:#1a1a2e; padding:28px 32px; }
+                    .logo { color:#fff; font-size:22px; font-weight:900; }
+                    .body { padding:32px; }
+                    .cta { display:inline-block; background:#1a1a2e; color:#fff;
+                           padding:14px 28px; border-radius:10px; text-decoration:none;
+                           font-weight:700; margin-top:18px; }
+                    .footer { background:#f8f8f8; padding:18px 32px; font-size:12px; color:#999; }
+                  </style>
+                </head>
+                <body>
+                  <div class="container">
+                    <div class="header"><span class="logo">ServeNow</span></div>
+                    <div class="body">
+                      <h2 style="color:#1a1a2e;margin-top:0;">Welcome, %s! 🎉</h2>
+                      <p style="color:#555;">Your provider account is now active.
+                         You can start accepting jobs and earning through ServeNow.</p>
+                      <p style="color:#555;">Open the app and complete your profile to
+                         get discovered by customers in your area.</p>
+                    </div>
+                    <div class="footer">
+                      &copy; 2026 ServeNow &bull; All rights reserved
+                    </div>
+                  </div>
+                </body>
+                </html>
+                """.formatted(fullName);
+    }
+}
+</file>
+
+<file path="src/main/java/com/services/in/service/FileStorageService.java">
+package com.services.in.service;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+import java.nio.file.*;
+import java.util.Set;
+
+/**
+ * Handles saving uploaded provider documents to the local filesystem.
+ *
+ * Folder layout:
+ *   {app.upload.dir}/documents/provider_{id}/aadhaar.{ext}
+ *   {app.upload.dir}/documents/provider_{id}/pan.{ext}
+ *
+ * Returns the relative path string saved in the database.
+ */
+@Service
+public class FileStorageService {
+
+    private static final Set<String> ALLOWED_TYPES =
+            Set.of("image/jpeg", "image/jpg", "image/png", "image/webp");
+
+    private static final long MAX_BYTES = 5L * 1024 * 1024; // 5 MB
+
+    @Value("${app.upload.dir:uploads}")
+    private String uploadDir;
+
+    /**
+     * Saves a document file for a specific provider.
+     *
+     * @param providerId numeric DB id of the provider
+     * @param file       the uploaded MultipartFile
+     * @param docType    "aadhaar" or "pan"
+     * @return relative path string, e.g. "documents/provider_3/aadhaar.jpg"
+     */
+    public String saveDocument(Long providerId, MultipartFile file, String docType)
+            throws IOException {
+
+        validateFile(file, docType);
+
+        // Build provider-specific folder: uploads/documents/provider_3/
+        String providerFolder = "documents/provider_" + providerId;
+        Path folderPath = Paths.get(uploadDir, providerFolder);
+        Files.createDirectories(folderPath); // creates all missing folders
+
+        // Derive extension from original filename, default to jpg
+        String originalName = file.getOriginalFilename() != null
+                ? file.getOriginalFilename() : "file.jpg";
+        String ext = originalName.contains(".")
+                ? originalName.substring(originalName.lastIndexOf(".") + 1).toLowerCase()
+                : "jpg";
+
+        // Fixed filename per doc type — overwrites if re-uploaded
+        String fileName = docType + "." + ext;
+        Path filePath = folderPath.resolve(fileName);
+
+        // Write bytes to disk
+        Files.write(filePath, file.getBytes(), StandardOpenOption.CREATE,
+                StandardOpenOption.TRUNCATE_EXISTING);
+
+        // Return relative path for DB storage
+        return providerFolder + "/" + fileName;
+    }
+
+    /**
+     * Deletes the provider's document folder if it exists.
+     * Called when rolling back a failed signup.
+     */
+    public void deleteProviderFolder(Long providerId) {
+        try {
+            Path folder = Paths.get(uploadDir, "documents", "provider_" + providerId);
+            if (Files.exists(folder)) {
+                Files.walk(folder)
+                     .sorted(java.util.Comparator.reverseOrder())
+                     .forEach(p -> { try { Files.delete(p); } catch (IOException ignored) {} });
+            }
+        } catch (IOException ignored) {}
+    }
+
+    private void validateFile(MultipartFile file, String docType) {
+        if (file == null || file.isEmpty()) {
+            throw new IllegalArgumentException(
+                    docType + " document is required and cannot be empty.");
+        }
+        if (file.getSize() > MAX_BYTES) {
+            throw new IllegalArgumentException(
+                    docType + " file must be under 5 MB.");
+        }
+        String contentType = file.getContentType();
+        if (contentType == null || !ALLOWED_TYPES.contains(contentType.toLowerCase())) {
+            throw new IllegalArgumentException(
+                    docType + " must be a JPEG, PNG, or WebP image.");
+        }
+    }
+}
+</file>
+
+<file path="src/main/java/com/services/in/service/OtpService.java">
+package com.services.in.service;
+
+import java.security.SecureRandom;
+import java.time.LocalDateTime;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.services.in.entity.OtpToken;
+import com.services.in.exception.InvalidOtpException;
+import com.services.in.repository.OtpTokenRepository;
+
+/**
+ * Manages the full OTP lifecycle: 1. generateAndSend – creates a random 6-digit
+ * OTP, persists it, fires email 2. verify – checks the OTP is correct, unused,
+ * and not expired
+ *
+ * A new OTP request automatically invalidates any previous OTPs for the same
+ * email + purpose combination to prevent replay attacks.
+ */
+@Service
+public class OtpService {
+
+    private static final SecureRandom SECURE_RANDOM = new SecureRandom();
+
+    private final OtpTokenRepository otpTokenRepository;
+    private final SmsService smsService;
+
+    @Value("${app.otp.expiry-minutes:10}")
+    private int otpExpiryMinutes;
+
+    public OtpService(OtpTokenRepository otpTokenRepository, SmsService smsService) {
+        this.otpTokenRepository = otpTokenRepository;
+        this.smsService = smsService;
+    }
+
+    /**
+     * Generates OTP keyed by mobile number instead of email. The `email` field
+     * in OtpToken is reused to store mobile for simplicity.
+     */
+    @Transactional
+    public void generateAndSend(String mobile, OtpToken.OtpPurpose purpose) {
+        otpTokenRepository.invalidatePreviousOtps(mobile, purpose);
+        String otp = generateSixDigitOtp();
+        OtpToken token = OtpToken.builder()
+                .email(mobile) // reusing email column to store mobile
+                .token(otp)
+                .purpose(purpose)
+                .createdAt(LocalDateTime.now())
+                .expiresAt(LocalDateTime.now().plusMinutes(otpExpiryMinutes))
+                .used(false)
+                .build();
+        otpTokenRepository.save(token);
+        smsService.sendOtpSms(mobile, otp, otpExpiryMinutes);
+    }
+
+    /**
+     * Verifies the supplied OTP against the stored value. Marks the token as
+     * used upon success.
+     *
+     * @param email email the OTP was sent to
+     * @param otp the 6-digit code the user entered
+     * @param purpose must match the purpose used during generation
+     * @throws InvalidOtpException if the OTP is wrong, expired, or already used
+     */
+    @Transactional
+    public void verify(String email, String otp, OtpToken.OtpPurpose purpose) {
+        OtpToken stored = otpTokenRepository
+                .findLatestValidOtp(email, purpose)
+                .orElseThrow(() -> new InvalidOtpException(
+                "No active OTP found for this email. Please request a new one."));
+
+        if (stored.isExpired()) {
+            throw new InvalidOtpException(
+                    "OTP has expired. Please request a new one.");
+        }
+
+        if (stored.getUsed()) {
+            throw new InvalidOtpException(
+                    "This OTP has already been used. Please request a new one.");
+        }
+
+        if (!stored.getToken().equals(otp)) {
+            throw new InvalidOtpException(
+                    "Incorrect OTP. Please check the code sent to your email.");
+        }
+
+        // Mark as used so it cannot be replayed
+        stored.setUsed(true);
+        otpTokenRepository.save(stored);
+    }
+
+    // ── Helpers ───────────────────────────────────────────────
+    /**
+     * Generates a cryptographically secure 6-digit numeric OTP
+     */
+    private String generateSixDigitOtp() {
+        int otpInt = 100_000 + SECURE_RANDOM.nextInt(900_000);
+        return String.valueOf(otpInt);
+    }
+
+    private String purposeLabel(OtpToken.OtpPurpose purpose) {
+        return switch (purpose) {
+            case SIGNUP ->
+                "account verification";
+            case FORGOT_PASSWORD ->
+                "password reset";
+            case LOGIN_OTP ->
+                "login";
+        };
+    }
+}
+</file>
+
+<file path="src/main/java/com/services/in/service/ProviderAuthService.java">
+package com.services.in.service;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.services.in.dto.AuthResponse;
+import com.services.in.dto.ForgotPasswordRequest;
+import com.services.in.dto.ProviderDto;
+import com.services.in.dto.ProviderSignInRequest;
+import com.services.in.dto.ProviderSignUpRequest;
+import com.services.in.dto.SelectSkillsRequest;
+import com.services.in.dto.UpdateProfileRequest;
+import com.services.in.dto.VerifyOtpRequest;
+import com.services.in.entity.OtpToken;
+import com.services.in.entity.ServiceProvider;
+import com.services.in.exception.AccountStateException;
+import com.services.in.exception.InvalidCredentialsException;
+import com.services.in.exception.InvalidOtpException;
+import com.services.in.exception.ProviderAlreadyExistsException;
+import com.services.in.exception.ProviderNotFoundException;
+import com.services.in.repository.ServiceProviderRepository;
+import com.services.in.security.JwtUtil;
+
+/**
+ * Core service orchestrating the provider (labour) authentication flow:
+ *
+ * Step 1 – POST /api/provider/auth/signup Create account with status
+ * PENDING_OTP Trigger OTP email (via OtpService → EmailService)
+ *
+ * Step 2 – POST /api/provider/auth/verify-otp Verify OTP, advance status to
+ * PENDING_SKILLS
+ *
+ * Step 3 – POST /api/provider/auth/select-skills Save skill selection, advance
+ * status to ACTIVE Return JWT so the provider is logged in immediately
+ *
+ * Sign In – POST /api/provider/auth/signin Mobile + password → JWT
+ */
+@Service
+public class ProviderAuthService {
+
+    private final ServiceProviderRepository labourRepository;
+    private final OtpService otpService;
+    private final EmailService emailService;
+    private final JwtUtil jwtUtil;
+    private final PasswordEncoder passwordEncoder;
+    private final FileStorageService fileStorageService;
+
+    // ✅ FIX: Removed `ServiceProvider labour` from constructor — JPA entities
+    //         are NOT Spring beans and cannot be injected via constructor.
+    public ProviderAuthService(ServiceProviderRepository labourRepository,
+            OtpService otpService,
+            EmailService emailService,
+            JwtUtil jwtUtil,
+            PasswordEncoder passwordEncoder,
+            FileStorageService fileStorageService) {
+        this.labourRepository = labourRepository;
+        this.otpService = otpService;
+        this.emailService = emailService;
+        this.jwtUtil = jwtUtil;
+        this.passwordEncoder = passwordEncoder;
+        this.fileStorageService = fileStorageService;
+    }
+
+    // ── Step 1: Signup ────────────────────────────────────────
+    /**
+     * Registers a new provider. Normalises the mobile number (strips country
+     * prefix), hashes the password, saves with PENDING_OTP status, and fires an
+     * OTP to the given email.
+     *
+     * @throws ProviderAlreadyExistsException if email or mobile is already
+     * registered
+     */
+    @Transactional
+    public void signUp(ProviderSignUpRequest request) {
+        String mobile = normaliseMobile(request.getMobile());
+        String email = request.getEmail().toLowerCase().trim();
+
+        if (labourRepository.existsByEmail(email)) {
+            throw new ProviderAlreadyExistsException(
+                    "An account with this email already exists.");
+        }
+        if (labourRepository.existsByMobile(mobile)) {
+            throw new ProviderAlreadyExistsException(
+                    "An account with this mobile number already exists.");
+        }
+
+        String experienceStr = request.getExperienceYears() != null
+                ? request.getExperienceYears() + " Years Exp." : null;
+
+        // Save provider first to get the generated DB id
+        ServiceProvider labour = ServiceProvider.builder()
+                .fullName(request.getFullName().trim())
+                .mobile(mobile)
+                .email(email)
+                .password(passwordEncoder.encode(request.getPassword()))
+                .area(request.getArea())
+                .experienceYears(request.getExperienceYears())
+                .experience(experienceStr)
+                .role(ServiceProvider.Role.PROVIDER)
+                .status(ServiceProvider.AccountStatus.PENDING_OTP)
+                .available(false)
+                .rating(0.0)
+                .reviews(0)
+                .kycStatus("PENDING")
+                .build();
+
+        labour = labourRepository.save(labour); // get ID now
+
+        // Save documents using the provider's real DB id
+        try {
+            if (request.getAadhaarFile() != null && !request.getAadhaarFile().isEmpty()) {
+                String aadhaarPath = fileStorageService.saveDocument(
+                        labour.getId(), request.getAadhaarFile(), "aadhaar");
+                labour.setAadhaarPath(aadhaarPath);
+            }
+            if (request.getPanFile() != null && !request.getPanFile().isEmpty()) {
+                String panPath = fileStorageService.saveDocument(
+                        labour.getId(), request.getPanFile(), "pan");
+                labour.setPanPath(panPath);
+            }
+            labourRepository.save(labour); // update with file paths
+        } catch (Exception ex) {
+            // Rollback: delete saved files and the DB record
+            fileStorageService.deleteProviderFolder(labour.getId());
+            labourRepository.delete(labour);
+            throw new RuntimeException("Document upload failed: " + ex.getMessage());
+        }
+
+        otpService.generateAndSend(mobile, OtpToken.OtpPurpose.SIGNUP);
+    }
+
+    // ── Resend OTP ────────────────────────────────────────────
+    /**
+     * Re-sends an OTP for the given email + purpose. The previous OTP is
+     * automatically invalidated by OtpService.
+     *
+     * @throws ProviderNotFoundException if email not registered (for non-SIGNUP
+     * purpose)
+     */
+    @Transactional
+    public void sendOtp(String mobile, String purposeStr) {
+        OtpToken.OtpPurpose purpose = parsePurpose(purposeStr);
+        String normalised = normaliseMobile(mobile);
+
+        if (purpose != OtpToken.OtpPurpose.SIGNUP) {
+            labourRepository.findByMobile(normalised)
+                    .orElseThrow(() -> new ProviderNotFoundException(
+                    "No account found with this mobile number."));
+        }
+
+        otpService.generateAndSend(normalised, purpose);
+    }
+
+    // ── Step 2: Verify OTP ────────────────────────────────────
+    /**
+     * Verifies the OTP the provider entered. On success, advances the account
+     * from PENDING_OTP → PENDING_SKILLS.
+     *
+     * @throws ProviderNotFoundException if the email is not registered
+     * @throws InvalidOtpException if the OTP is wrong / expired / used
+     * @throws AccountStateException if the account is not in PENDING_OTP state
+     */
+    @Transactional
+    public void verifyOtp(VerifyOtpRequest request) {
+        String mobile = normaliseMobile(request.getMobile());
+        OtpToken.OtpPurpose purpose = parsePurpose(request.getPurpose());
+
+        ServiceProvider labour = labourRepository.findByMobile(mobile)
+                .orElseThrow(() -> new ProviderNotFoundException(
+                "No account found with this mobile number."));
+
+        if (purpose == OtpToken.OtpPurpose.SIGNUP
+                && labour.getStatus() != ServiceProvider.AccountStatus.PENDING_OTP) {
+            throw new AccountStateException(
+                    "Account is not awaiting OTP verification. Current status: "
+                    + labour.getStatus());
+        }
+
+        otpService.verify(mobile, request.getOtp(), purpose);
+
+        if (purpose == OtpToken.OtpPurpose.SIGNUP) {
+            labour.setStatus(ServiceProvider.AccountStatus.PENDING_SKILLS);
+            labourRepository.save(labour);
+        }
+    }
+
+    // ── Step 3: Select Skills ─────────────────────────────────
+    /**
+     * Saves the provider's chosen skill categories and activates the account.
+     * Returns a JWT so the frontend can navigate directly to the provider home
+     * screen.
+     *
+     * @throws ProviderNotFoundException if the email is not registered
+     * @throws AccountStateException if the account has not verified its OTP yet
+     */
+    @Transactional
+    public AuthResponse selectSkills(SelectSkillsRequest request) {
+        String email = request.getEmail().toLowerCase().trim();
+
+        ServiceProvider labour = labourRepository.findByEmail(email)
+                .orElseThrow(() -> new ProviderNotFoundException(
+                "No account found with this email address."));
+
+        if (labour.getStatus() != ServiceProvider.AccountStatus.PENDING_SKILLS) {
+            throw new AccountStateException(
+                    "Account cannot select skills in its current state: "
+                    + labour.getStatus());
+        }
+
+        labour.setSkills(request.getSkills());
+        labour.setStatus(ServiceProvider.AccountStatus.ACTIVE);
+        labourRepository.save(labour);
+
+        // Send welcome email asynchronously
+        emailService.sendWelcomeEmail(labour.getEmail(), labour.getFullName());
+
+        // Issue JWT — provider is now logged in
+        String token = jwtUtil.generateToken(labour.getEmail(), labour.getId(), "PROVIDER");
+        return AuthResponse.builder()
+                .token(token)
+                .role("PROVIDER")
+                .provider(toDto(labour))
+                .build();
+    }
+
+    // ── Sign In ───────────────────────────────────────────────
+    /**
+     * Authenticates a provider using mobile number + password. Returns a JWT on
+     * success.
+     *
+     * @throws InvalidCredentialsException if mobile not found or password
+     * incorrect
+     * @throws AccountStateException if account is not ACTIVE
+     */
+    @Transactional(readOnly = true)
+    public AuthResponse signIn(ProviderSignInRequest request) {
+        String mobile = normaliseMobile(request.getMobile());
+
+        ServiceProvider labour = labourRepository.findByMobile(mobile)
+                .orElseThrow(() -> new InvalidCredentialsException(
+                "Invalid mobile number or password."));
+
+        if (!passwordEncoder.matches(request.getPassword(), labour.getPassword())) {
+            throw new InvalidCredentialsException(
+                    "Invalid mobile number or password.");
+        }
+
+        if (labour.getStatus() == ServiceProvider.AccountStatus.PENDING_OTP) {
+            throw new AccountStateException(
+                    "Please verify your email OTP before signing in.");
+        }
+
+        if (labour.getStatus() == ServiceProvider.AccountStatus.PENDING_SKILLS) {
+            throw new AccountStateException(
+                    "Please complete skill selection before signing in.");
+        }
+
+        if (labour.getStatus() == ServiceProvider.AccountStatus.SUSPENDED) {
+            throw new AccountStateException(
+                    "Your account has been suspended. Please contact support.");
+        }
+
+        String token = jwtUtil.generateToken(labour.getEmail(), labour.getId(), "PROVIDER");
+        return AuthResponse.builder()
+                .token(token)
+                .role("PROVIDER")
+                .provider(toDto(labour))
+                .build();
+    }
+
+    // ── Provider profile ──────────────────────────────────────
+    /**
+     * Returns the public profile of a provider by ID.
+     */
+    @Transactional(readOnly = true)
+    public ProviderDto getProfile(Long providerId) {
+        ServiceProvider labour = labourRepository.findById(providerId)
+                .orElseThrow(() -> new ProviderNotFoundException(
+                "Provider not found with id: " + providerId));
+        return toDto(labour);
+    }
+
+    // ── Convenience lookup ────────────────────────────────────
+    /**
+     * Returns the numeric ID for a provider email. Used by
+     * ProviderController.getMyProfile to resolve the JWT subject to a DB id.
+     */
+    @Transactional(readOnly = true)
+    public Long findIdByEmail(String email) {
+        return labourRepository.findByEmail(email)
+                .orElseThrow(() -> new ProviderNotFoundException(
+                "Provider not found with email: " + email))
+                .getId();
+    }
+
+    // ── Mappers ───────────────────────────────────────────────
+    public ProviderDto toDto(ServiceProvider labour) {
+        return ProviderDto.builder()
+                .id(labour.getId())
+                .fullName(labour.getFullName())
+                .initials(labour.getInitials())
+                .mobile(labour.getMobile())
+                .email(labour.getEmail())
+                .area(labour.getArea())
+                .city(labour.getCity())
+                .state(labour.getState())
+                .pinCode(labour.getPinCode())
+                .dateOfBirth(labour.getDateOfBirth())
+                .gender(labour.getGender())
+                .bloodGroup(labour.getBloodGroup())
+                .bio(labour.getBio())
+                .aadhaarNumber(labour.getAadhaarNumber())
+                .emergencyContact(labour.getEmergencyContact())
+                .emergencyName(labour.getEmergencyName())
+                .experience(labour.getExperience())
+                .experienceYears(labour.getExperienceYears())
+                .rating(labour.getRating())
+                .reviews(labour.getReviews())
+                .badge(labour.getBadge())
+                .badgeColor(labour.getBadgeColor())
+                .available(labour.getAvailable())
+                .location(labour.getLocation())
+                .role(labour.getRole().name())
+                .status(labour.getStatus().name())
+                .kycStatus(labour.getKycStatus())
+                .skills(labour.getSkills())
+                .build();
+    }
+
+    // ── Utilities ─────────────────────────────────────────────
+    /**
+     * Strips "+91 " or "+91" prefix that the frontend may include and removes
+     * all whitespace, returning a clean 10-digit number.
+     */
+    private String normaliseMobile(String raw) {
+        if (raw == null) {
+            return "";
+        }
+        return raw.trim()
+                .replaceAll("^\\+91\\s?", "")
+                .replaceAll("\\s", "");
+    }
+
+    private OtpToken.OtpPurpose parsePurpose(String purposeStr) {
+        if (purposeStr == null || purposeStr.isBlank()) {
+            return OtpToken.OtpPurpose.SIGNUP;
+        }
+        try {
+            return OtpToken.OtpPurpose.valueOf(purposeStr.toUpperCase());
+        } catch (IllegalArgumentException ex) {
+            return OtpToken.OtpPurpose.SIGNUP;
+        }
+    }
+
+    @Transactional
+    public ProviderDto updateProfile(Long providerId, UpdateProfileRequest request) {
+        ServiceProvider provider = labourRepository.findById(providerId)
+                .orElseThrow(() -> new ProviderNotFoundException(
+                "Provider not found with id: " + providerId));
+
+        if (request.getFullName() != null && !request.getFullName().isBlank()) {
+            provider.setFullName(request.getFullName().trim());
+        }
+        if (request.getArea() != null) {
+            provider.setArea(request.getArea().trim());
+        }
+        if (request.getCity() != null) {
+            provider.setCity(request.getCity().trim());
+        }
+        if (request.getState() != null) {
+            provider.setState(request.getState().trim());
+        }
+        if (request.getPinCode() != null) {
+            provider.setPinCode(request.getPinCode().trim());
+        }
+        if (request.getDateOfBirth() != null) {
+            provider.setDateOfBirth(request.getDateOfBirth());
+        }
+        if (request.getGender() != null) {
+            provider.setGender(request.getGender());
+        }
+        if (request.getBloodGroup() != null) {
+            provider.setBloodGroup(request.getBloodGroup());
+        }
+        if (request.getBio() != null) {
+            provider.setBio(request.getBio().trim());
+        }
+        if (request.getAadhaarNumber() != null) {
+            provider.setAadhaarNumber(request.getAadhaarNumber().trim());
+        }
+        if (request.getEmergencyContact() != null) {
+            provider.setEmergencyContact(request.getEmergencyContact().trim());
+        }
+        if (request.getEmergencyName() != null) {
+            provider.setEmergencyName(request.getEmergencyName().trim());
+        }
+        if (request.getExperienceYears() != null) {
+            provider.setExperienceYears(request.getExperienceYears());
+            provider.setExperience(request.getExperienceYears() + " Years Exp.");
+        }
+        if (request.getSkills() != null) {
+            provider.setSkills(request.getSkills());
+        }
+
+        labourRepository.save(provider);
+        return toDto(provider);
+    }
+
+    // ── Forgot Password: Step 1 ───────────────────────────────
+    /**
+     * Checks if mobile is registered, then sends FORGOT_PASSWORD OTP via SMS.
+     */
+    @Transactional
+    public void checkMobileAndSendOtp(String mobile) {
+        String normalised = normaliseMobile(mobile);
+
+        // Throws ProviderNotFoundException if not found — frontend shows error
+        labourRepository.findByMobile(normalised)
+                .orElseThrow(() -> new ProviderNotFoundException(
+                "No account found with this mobile number. Please register first."));
+
+        otpService.generateAndSend(normalised, OtpToken.OtpPurpose.FORGOT_PASSWORD);
+    }
+
+    // ── Forgot Password: Step 2 (reset-password endpoint) ────
+    /**
+     * Resets the provider's password.
+     *
+     * The FORGOT_PASSWORD OTP was already verified and marked as `used=true` by
+     * the preceding POST /verify-otp call. Calling otpService.verify() here a
+     * second time would always throw InvalidOtpException("already used"), which
+     * is exactly what caused the "Validation failed" / error banner on the
+     * Reset Password screen.
+     *
+     * Flow: 1. POST /check-mobile → validates mobile exists, sends OTP via SMS
+     * 2. POST /verify-otp → verifies OTP, marks token used=true 3. POST
+     * /reset-password → (this method) sets new hashed password ✅
+     */
+    @Transactional
+    public void resetPassword(ForgotPasswordRequest request) {
+        String normalised = normaliseMobile(request.getMobile());
+
+        ServiceProvider provider = labourRepository.findByMobile(normalised)
+                .orElseThrow(() -> new ProviderNotFoundException(
+                "No account found with this mobile number."));
+
+        // ✅ No OTP check here — it was already consumed in verifyOtp()
+        provider.setPassword(passwordEncoder.encode(request.getNewPassword()));
+        labourRepository.save(provider);
+    }
+}
+</file>
+
+<file path="src/main/java/com/services/in/service/ServiceCategoryService.java">
+// package com.services.in.service;
+// import com.services.in.dto.ServiceCategoryDto;
+// import com.services.in.entity.ServiceCategory;
+// import com.services.in.repository.ServiceCategoryRepository;
+// import org.springframework.stereotype.Service;
+// import org.springframework.transaction.annotation.Transactional;
+// import java.util.List;
+// /**
+//  * Provides the list of service categories shown on SelectServicesScreen.
+//  * Categories are pre-seeded by DataSeeder at application startup.
+//  */
+// @Service
+// public class ServiceCategoryService {
+//     private final ServiceCategoryRepository categoryRepository;
+//     public ServiceCategoryService(ServiceCategoryRepository categoryRepository) {
+//         this.categoryRepository = categoryRepository;
+//     }
+//     @Transactional(readOnly = true)
+//     public List<ServiceCategoryDto> getAllActive() {
+//         return categoryRepository.findByActiveTrueOrderBySortOrderAsc()
+//                 .stream()
+//                 .map(this::toDto)
+//                 .toList();
+//     }
+//     private ServiceCategoryDto toDto(ServiceCategory cat) {
+//         return ServiceCategoryDto.builder()
+//                 .id(cat.getId())
+//                 .icon(cat.getIcon())
+//                 .title(cat.getTitle())
+//                 .description(cat.getDescription())
+//                 .build();
+//     }
+// }
+
+
+
+
+
+package com.services.in.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.services.in.dto.ServiceCategoryDto;
+import com.services.in.entity.ServiceCategory;
+import com.services.in.repository.ServiceCategoryRepository;
+
+/**
+ * Provides the list of service categories shown on SelectServicesScreen.
+ * Categories are pre-seeded by DataSeeder at application startup. Now also
+ * returns sub-skills for each category.
+ */
+@Service
+public class ServiceCategoryService {
+
+    private final ServiceCategoryRepository categoryRepository;
+
+    public ServiceCategoryService(ServiceCategoryRepository categoryRepository) {
+        this.categoryRepository = categoryRepository;
+    }
+
+    @Transactional(readOnly = true)
+    public List<ServiceCategoryDto> getAllActive() {
+        return categoryRepository.findByActiveTrueOrderBySortOrderAsc()
+                .stream()
+                .map(this::toDto)
+                .toList();
+    }
+
+    private ServiceCategoryDto toDto(ServiceCategory cat) {
+        return ServiceCategoryDto.builder()
+                .id(cat.getId())
+                .icon(cat.getIcon())
+                .title(cat.getTitle())
+                .description(cat.getDescription())
+                .subSkills(cat.getSubSkills())
+                .build();
+    }
+}
+</file>
+
+<file path="src/main/java/com/services/in/service/SmsService.java">
+package com.services.in.service;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
+import com.twilio.type.PhoneNumber;
+
+import jakarta.annotation.PostConstruct;
+
+@Service
+public class SmsService {
+
+    @Value("${twilio.account-sid}")
+    private String accountSid;
+
+    @Value("${twilio.auth-token}")
+    private String authToken;
+
+    @Value("${twilio.phone-number}")
+    private String fromNumber;
+
+    @PostConstruct
+    public void init() {
+        Twilio.init(accountSid, authToken);
+    }
+
+    public void sendOtpSms(String toMobile, String otp, int expiryMin) {
+        // toMobile must be in E.164 format e.g. +919876543210
+        String formattedNumber = "+91" + toMobile;
+        String body = "Your ServeNow OTP is: " + otp + ". Valid for " + expiryMin + " minutes. Do not share it with anyone.";
+        Message.creator(
+                new PhoneNumber(formattedNumber),
+                new PhoneNumber(fromNumber),
+                body
+        ).create();
+    }
+}
+</file>
+
+<file path="src/main/resources/application.properties">
+spring.application.name=serviceprovider
+
+server.port=8080
+
+# ── Active profile ──────────────────────────────────────────
+spring.profiles.active=prod
+
+# ── MySQL Database Configuration ────────────────────────────
+spring.datasource.url=jdbc:mysql://localhost:3306/serviceprovider_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.username=root
+spring.datasource.password=root
+
+# ── Connection Pool (HikariCP - default) ─────────────────────
+spring.datasource.hikari.maximum-pool-size=10
+spring.datasource.hikari.minimum-idle=5
+spring.datasource.hikari.connection-timeout=30000
+
+# ── JPA / Hibernate ─────────────────────────────────────────
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+# ── JWT ─────────────────────────────────────────────────────
+app.jwt.secret=U2VydmVOb3dTdXBlclNlY3JldEtlZUZvckxhYm91ckF1dGhCYWNrZW5kMjAyNg==
+app.jwt.expiration-ms=86400000
+
+# ── OTP ─────────────────────────────────────────────────────
+app.otp.expiry-minutes=10
+
+# ── Mail Configuration ──────────────────────────────────────
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=gunduumesh66@gmail.com
+spring.mail.password=lbva ytoo sdfi rkgb
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+spring.mail.properties.mail.smtp.starttls.required=true
+spring.mail.properties.mail.debug=false
+app.mail.from=noreply@servenow.in
+app.mail.from-name=ServeNow
+
+# ── CORS ────────────────────────────────────────────────────
+app.cors.allowed-origins=http://localhost:8081,http://localhost:19006,exp://localhost:8081
+
+
+# ── File Upload ─────────────────────────────────────────────
+app.upload.dir=uploads
+app.upload.max-file-size-mb=5
+spring.servlet.multipart.max-file-size=10MB
+spring.servlet.multipart.max-request-size=20MB
+
+# ── Twilio ──────────────────────────────────────────────────
+twilio.account-sid=${TWILIO_SID}
+twilio.auth-token=${TWILIO_AUTH_TOKEN}
+twilio.phone-number=+15074282045
+</file>
+
+<file path="src/test/java/com/services/in/InApplicationTests.java">
+package com.services.in;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class InApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
+</file>
+
+</files>
